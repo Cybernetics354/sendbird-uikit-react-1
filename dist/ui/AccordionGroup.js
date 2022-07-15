@@ -1,6 +1,6 @@
 import React__default, { useState } from 'react';
-import { P as Provider } from '../context-9862dbc2.js';
-import '../utils-20d05a65.js';
+import { P as Provider } from '../context-3309c11a.js';
+import '../utils-338c9de2.js';
 
 // Wraps all the accordions in an accordion set
 function AccordionGroup(_a) {

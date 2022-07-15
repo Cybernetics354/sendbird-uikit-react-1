@@ -1,18 +1,18 @@
-import { _ as _objectSpread2 } from '../_rollupPluginBabelHelpers-6a3c1c63.js';
+import { _ as _objectSpread2 } from '../_rollupPluginBabelHelpers-5ef7889e.js';
 import React__default, { useContext, useRef, useState, useMemo, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { N as NodeTypes, M as MessageInputKeys, a as NodeNames } from '../const-eb43aee9.js';
-import { U as USER_MENTION_TEMP_CHAR } from '../const-80c30e70.js';
+import { N as NodeTypes, M as MessageInputKeys, a as NodeNames } from '../const-fc5867a3.js';
+import { U as USER_MENTION_TEMP_CHAR } from '../const-54c1f5b2.js';
 import IconButton from './IconButton.js';
-import { B as Button, a as ButtonTypes, b as ButtonSizes } from '../index-8c1601f6.js';
+import { B as Button, a as ButtonTypes, b as ButtonSizes } from '../index-d7f84f9a.js';
 import MentionUserLabel from './MentionUserLabel.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-8eb795c0.js';
-import { a as LocalizationContext } from '../LocalizationContext-09cb5078.js';
-import { l as convertWordToStringObj, S as StringObjType, m as arrayEqual, k as getClassName } from '../index-af6c813e.js';
-import '../stringSet-9cd89798.js';
-import '../index-5b9a7c71.js';
-import '../tslib.es6-21381414.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-dd7d2c20.js';
+import { a as LocalizationContext } from '../LocalizationContext-c6c43024.js';
+import { l as convertWordToStringObj, S as StringObjType, m as arrayEqual, k as getClassName } from '../index-5b610291.js';
+import '../stringSet-bc59be04.js';
+import '../index-7ce5a58a.js';
+import '../tslib.es6-5837fd36.js';
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -3447,9 +3447,10 @@ BufferList.prototype.concat = function (n) {
 
 var safeBuffer = {exports: {}};
 
-/* eslint-disable node/no-deprecated-api */
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
 (function (module, exports) {
+/* eslint-disable node/no-deprecated-api */
 var buffer$1 = buffer;
 var Buffer = buffer$1.Buffer;
 
@@ -3470,6 +3471,8 @@ if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow)
 function SafeBuffer (arg, encodingOrOffset, length) {
   return Buffer(arg, encodingOrOffset, length)
 }
+
+SafeBuffer.prototype = Object.create(Buffer.prototype);
 
 // Copy static methods from Buffer
 copyProps(Buffer, SafeBuffer);

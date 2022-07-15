@@ -1,20 +1,20 @@
 'use strict';
 
-var _rollupPluginBabelHelpers = require('../_rollupPluginBabelHelpers-5122729b.js');
+var _rollupPluginBabelHelpers = require('../_rollupPluginBabelHelpers-404a108a.js');
 var React = require('react');
 var PropTypes = require('prop-types');
-var _const$1 = require('../const-e72bf9c1.js');
-var _const = require('../const-82799a29.js');
+var _const$1 = require('../const-f7b68670.js');
+var _const = require('../const-a82a653e.js');
 var ui_IconButton = require('./IconButton.js');
-var ui_Button = require('../index-73892caf.js');
+var ui_Button = require('../index-50918912.js');
 var ui_MentionUserLabel = require('./MentionUserLabel.js');
 var ui_Icon = require('./Icon.js');
-var ui_Label = require('../index-1a5c5200.js');
-var LocalizationContext = require('../LocalizationContext-44ed70a4.js');
-var index = require('../index-129ce994.js');
-require('../stringSet-6cea29d9.js');
-require('../index-f0b59409.js');
-require('../tslib.es6-ca286580.js');
+var ui_Label = require('../index-7309809e.js');
+var LocalizationContext = require('../LocalizationContext-219f1540.js');
+var index = require('../index-029c9c4b.js');
+require('../stringSet-49111b06.js');
+require('../index-6ada6170.js');
+require('../tslib.es6-c9f1dea2.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -3454,9 +3454,10 @@ BufferList.prototype.concat = function (n) {
 
 var safeBuffer = {exports: {}};
 
-/* eslint-disable node/no-deprecated-api */
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
 (function (module, exports) {
+/* eslint-disable node/no-deprecated-api */
 var buffer$1 = buffer;
 var Buffer = buffer$1.Buffer;
 
@@ -3477,6 +3478,8 @@ if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow)
 function SafeBuffer (arg, encodingOrOffset, length) {
   return Buffer(arg, encodingOrOffset, length)
 }
+
+SafeBuffer.prototype = Object.create(Buffer.prototype);
 
 // Copy static methods from Buffer
 copyProps(Buffer, SafeBuffer);

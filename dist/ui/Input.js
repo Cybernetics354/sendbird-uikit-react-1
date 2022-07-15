@@ -1,7 +1,7 @@
 import React__default, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-8eb795c0.js';
-import '../stringSet-9cd89798.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-dd7d2c20.js';
+import '../stringSet-bc59be04.js';
 
 const InputLabel = _ref => {
   let {
