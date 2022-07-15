@@ -1,0 +1,19 @@
+import React__default, { useContext } from 'react';
+import { a as LocalizationContext } from '../../LocalizationContext-09cb5078.js';
+import { L as Label, a as LabelTypography } from '../../index-8eb795c0.js';
+import '../../stringSet-9cd89798.js';
+import '../../index-5b9a7c71.js';
+import 'prop-types';
+
+var FrozenNotification = function () {
+  var stringSet = useContext(LocalizationContext).stringSet;
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: "sendbird-notification sendbird-notification--frozen"
+  }, /*#__PURE__*/React__default.createElement(Label, {
+    className: "sendbird-notification__text",
+    type: LabelTypography.CAPTION_2
+  }, stringSet.CHANNEL_FROZEN));
+};
+
+export { FrozenNotification as default };
+//# sourceMappingURL=FrozenNotification.js.map
