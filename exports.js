@@ -1,6 +1,6 @@
 export default {
   // legacy
-  index: 'src/index.js',
+  index: 'src/module.js',
 
   // Easy to use app
   App: 'src/smart-components/App/index.jsx',

@@ -5,7 +5,7 @@ import type { User } from '@sendbird/chat';
 import Avatar from '../../../../ui/Avatar';
 import Label, { LabelTypography, LabelColors } from '../../../../ui/Label';
 import { LocalizationContext } from '../../../../lib/LocalizationContext';
-import { MentionItemUIEvent } from '../../../..';
+import { MentionItemUIEvent } from '../../../../module';
 import uuidv4 from '../../../../utils/uuid';
 
 interface SuggestedUserMentionItemProps {

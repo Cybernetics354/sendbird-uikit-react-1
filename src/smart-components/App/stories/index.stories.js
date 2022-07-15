@@ -9,8 +9,8 @@ import ChannelList from '../../ChannelList';
 import Channel from '../../Channel';
 import ChannelSettings from '../../ChannelSettings';
 import MessageSearch from '../../MessageSearch';
-import { withSendBird } from '../../..';
-import { sendbirdSelectors } from '../../..';
+import { withSendBird } from '../../../module';
+import { sendbirdSelectors } from '../../../module';
 import { fitPageSize } from './utils';
 
 const appId = process.env.STORYBOOK_APP_ID;

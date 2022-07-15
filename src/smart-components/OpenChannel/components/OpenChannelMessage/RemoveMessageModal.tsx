@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { ClientFileMessage, ClientUserMessage } from '../../../../index';
+import { ClientFileMessage, ClientUserMessage } from '../../../../module';
 import Modal from '../../../../ui/Modal';
 import { LocalizationContext } from '../../../../lib/LocalizationContext';
 

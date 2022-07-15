@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { Logger } from '../../../..';
+import { Logger } from '../../../../module';
 
 interface DynamicParams {
   conversationScrollRef: React.RefObject<HTMLDivElement>;

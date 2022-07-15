@@ -34,7 +34,7 @@ import {
   getSenderName,
 } from '../../utils';
 import { UserProfileContext } from '../../lib/UserProfileContext';
-import { ReplyType } from '../../index.js';
+import { ReplyType } from '../../module.js';
 import { useLocalization } from '../../lib/LocalizationContext';
 import useSendbirdStateContext from '../../hooks/useSendbirdStateContext';
 import { GroupChannel } from '@sendbird/chat/groupChannel';

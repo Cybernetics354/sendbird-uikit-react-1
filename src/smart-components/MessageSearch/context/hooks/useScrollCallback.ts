@@ -1,7 +1,7 @@
 import type { SendbirdError } from '@sendbird/chat';
 import type { AdminMessage, FileMessage, MessageSearchQuery, UserMessage } from '@sendbird/chat/message';
 import { useCallback } from 'react';
-import { Logger } from '../../../..';
+import { Logger } from '../../../../module';
 import * as messageActionTypes from '../dux/actionTypes';
 
 interface MainProps {

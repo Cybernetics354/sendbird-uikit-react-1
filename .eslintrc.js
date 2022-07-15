@@ -24,7 +24,7 @@ module.exports = {
   rules: {
     // uncomment 'linebreak-style' to build in windows - its not adviced to commit from windows
     // read more - https://community.perforce.com/s/article/3096
-    // ['linebreak-style']: 0,
+    ['linebreak-style']: 0,
     "import/extensions": [
       "error",
       "ignorePackages",

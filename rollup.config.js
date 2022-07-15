@@ -102,14 +102,19 @@ module.exports = ({
     }),
     commonjs(),
     nodePolyfills({
-      include: ['buffer', 'stream']
+      include: ['buffer', 'stream'],
     }),
     copy({
       verbose: true,
       targets: [
         {
-          src: './src/index.d.ts',
+          src: './src/module.d.ts',
           dest: 'dist',
+          rename: 'index.d.ts',
+        },
+        {
+          src: './dist/dist/index.css',
+          dest: 'src/dist',
         },
       ],
     }),

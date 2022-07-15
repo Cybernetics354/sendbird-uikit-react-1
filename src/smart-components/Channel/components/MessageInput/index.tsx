@@ -1,3 +1,5 @@
+import type { User } from '@sendbird/chat';
+
 import React, { useState, useContext, useEffect } from 'react';
 
 import './message-input.scss';
@@ -150,6 +152,13 @@ const MessageInputWrapper = (): JSX.Element => {
           channel?.endTyping();
         }}
         onFileUpload={(file) => {
+          // TODO: upload to s3
+          // sendMessage({
+          //   "@image-url:https://foo.com/bar.jpeg",
+          //   quoteMessage,
+          //   ([] as User[]),
+          //   ([] as any),
+          // });
           sendFileMessage(file, quoteMessage);
           setQuoteMessage(null);
         }}

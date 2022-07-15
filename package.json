@@ -36,7 +36,8 @@
     "rollup": "npm run clean-release; rollup -c",
     "deploy-storybook": "storybook-to-ghpages",
     "inspect": "npm run test; npm run lint;",
-    "bundle": "dts-bundle-generator -o ./dist/my.d.ts ./src/index.d.ts"
+    "bundle": "dts-bundle-generator -o ./dist/my.d.ts ./src/module.d.ts",
+    "start-web": "react-app-rewired start"
   },
   "repository": {
     "type": "git",
@@ -55,7 +56,8 @@
     "@sendbird/chat": "^4.0.4",
     "css-vars-ponyfill": "^2.3.2",
     "date-fns": "^2.16.1",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react-dev-utils": "^12.0.1"
   },
   "bugs": {
     "url": "https://community.sendbird.com"
@@ -109,7 +111,9 @@
     "plop": "^2.5.3",
     "postcss": "^8.3.5",
     "react": "^17.0.2",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^17.0.2",
+    "react-scripts": "5.0.1",
     "react-test-renderer": "^17.0.2",
     "rollup": "^2.53.1",
     "rollup-plugin-copy": "^3.4.0",

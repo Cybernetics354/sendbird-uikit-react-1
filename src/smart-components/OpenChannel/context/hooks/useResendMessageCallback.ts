@@ -1,7 +1,7 @@
 import type { FileMessage, UserMessage } from '@sendbird/chat/message';
 import type { OpenChannel } from '@sendbird/chat/openChannel';
 import { useCallback } from 'react';
-import { Logger } from '../../../..';
+import { Logger } from '../../../../module';
 import * as messageActionTypes from '../dux/actionTypes';
 
 interface DynamicParams {

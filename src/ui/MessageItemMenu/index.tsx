@@ -16,7 +16,7 @@ import {
   isPendingMessage,
 } from '../../utils/index';
 import { LocalizationContext } from '../../lib/LocalizationContext';
-import { ReplyType } from '../../index';
+import { ReplyType } from '../../module';
 
 interface Props {
   className?: string | Array<string>;

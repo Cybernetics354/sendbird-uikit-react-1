@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Logger } from '../../../..';
+import { Logger } from '../../../../module';
 import * as messageActionTypes from '../dux/actionTypes';
 
 interface DynamicParams {
