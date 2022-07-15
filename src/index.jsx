@@ -12,6 +12,7 @@ ReactDOM.render(
     <SendBirdApp
       appId={YOUR_APP_ID}
       userId={USER_ID}
+      onFilePicked={() => 'lorem cuy'}
     />
   </React.StrictMode>,
   document.getElementById('root'),

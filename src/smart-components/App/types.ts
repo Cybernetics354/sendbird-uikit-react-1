@@ -36,4 +36,5 @@ export default interface AppProps {
   disableAutoSelect?: boolean;
   isTypingIndicatorEnabledOnChannelList?: boolean;
   isMessageReceiptStatusEnabledOnChannelList?: boolean;
+  onFilePicked?: (file: any) => string;
 }

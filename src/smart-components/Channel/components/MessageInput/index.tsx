@@ -12,6 +12,7 @@ import { useChannelContext } from '../../context/ChannelProvider';
 import useSendbirdStateContext from '../../../../hooks/useSendbirdStateContext';
 import SuggestedMentionList from '../SuggestedMentionList';
 import { MessageInputKeys } from '../../../../ui/MessageInput/const';
+import { FileInputContext } from '../../../../smart-components/App';
 
 const MessageInputWrapper = (): JSX.Element => {
   const {
@@ -31,6 +32,7 @@ const MessageInputWrapper = (): JSX.Element => {
   const maxUserMentionCount = userMention?.maxMentionCount || 10;
   const maxUserSuggestionCount = userMention?.maxSuggestionCount || 15;
 
+  const onFilePicked = useContext<FileInputContext>(FileInputContext);
   const { stringSet } = useContext(LocalizationContext);
   const [mentionNickname, setMentionNickname] = useState('');
   const [mentionedUsers, setMentionedUsers] = useState([]);
@@ -153,13 +155,14 @@ const MessageInputWrapper = (): JSX.Element => {
         }}
         onFileUpload={(file) => {
           // TODO: upload to s3
-          // sendMessage({
-          //   "@image-url:https://foo.com/bar.jpeg",
-          //   quoteMessage,
-          //   ([] as User[]),
-          //   ([] as any),
-          // });
-          sendFileMessage(file, quoteMessage);
+          const result = onFilePicked(file);
+          if(result) {
+            sendMessage({
+              message: result,
+            })
+          }
+
+          // sendFileMessage(file, quoteMessage);
           setQuoteMessage(null);
         }}
         onUserMentioned={(user) => {
