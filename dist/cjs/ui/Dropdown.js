@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var PropTypes = require('prop-types');
-var ui_Label = require('../index-9ad5c786.js');
-require('../stringSet-ca0cf06e.js');
+var ui_Label = require('../index-9235a70d.js');
+require('../stringSet-6c45946e.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

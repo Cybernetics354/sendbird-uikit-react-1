@@ -2,7 +2,7 @@
 
 var React = require('react');
 var PropTypes = require('prop-types');
-var color = require('../color-670a89e1.js');
+var color = require('../color-65c1a1ff.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

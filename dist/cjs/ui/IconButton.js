@@ -1,6 +1,6 @@
 'use strict';
 
-var _rollupPluginBabelHelpers = require('../_rollupPluginBabelHelpers-d0fefa20.js');
+var _rollupPluginBabelHelpers = require('../_rollupPluginBabelHelpers-95f9644b.js');
 var React = require('react');
 var PropTypes = require('prop-types');
 

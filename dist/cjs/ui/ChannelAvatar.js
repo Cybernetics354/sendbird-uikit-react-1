@@ -3,11 +3,11 @@
 var React = require('react');
 var ui_Avatar = require('./Avatar.js');
 var ui_Icon = require('./Icon.js');
-var utils = require('../utils-2d9307d2.js');
-require('../tslib.es6-87d8a6c3.js');
+var utils = require('../utils-277d6b83.js');
+require('../tslib.es6-79d6c001.js');
 require('./ImageRenderer.js');
 require('prop-types');
-require('../uuid-cfc8429e.js');
+require('../uuid-35ad849a.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

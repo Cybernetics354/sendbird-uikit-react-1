@@ -2,14 +2,14 @@ import React__default from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import Avatar from './Avatar.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-d9ca04bb.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-53585fab.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { M as MODAL_ROOT } from '../index-ec60ce57.js';
-import { C as isSupportedFileView, D as isVideo, E as isImage } from '../index-5ddc9ee9.js';
-import '../tslib.es6-5cbf2d41.js';
+import { M as MODAL_ROOT } from '../index-6bfe08d8.js';
+import { C as isSupportedFileView, D as isVideo, E as isImage } from '../index-fcb040ec.js';
+import '../tslib.es6-4a4f5c58.js';
 import './ImageRenderer.js';
-import '../uuid-ffa79983.js';
-import '../stringSet-bfbe6996.js';
+import '../uuid-91011cda.js';
+import '../stringSet-49030004.js';
 
 const FileViewerComponent = _ref => {
   let {

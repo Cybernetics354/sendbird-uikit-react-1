@@ -171,13 +171,13 @@ export const MemberList = (): ReactElement => {
             </Button>
           )
         }
-        <Button
+        {/* <Button
           type={ButtonTypes.SECONDARY}
           size={ButtonSizes.SMALL}
           onClick={() => setShowInviteUsers(true)}
         >
           Invite members
-        </Button>
+        </Button> */}
       </div>
       {
         showAllMembers && (
