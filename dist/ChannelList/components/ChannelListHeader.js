@@ -1,18 +1,18 @@
 import React__default, { useContext } from 'react';
-import { a as LocalizationContext } from '../../LocalizationContext-c6c43024.js';
+import { a as LocalizationContext } from '../../LocalizationContext-6b2a3bfd.js';
 import useSendbirdStateContext from '../../useSendbirdStateContext.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../../index-dd7d2c20.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../../index-d9ca04bb.js';
 import IconButton from '../../ui/IconButton.js';
 import Avatar from '../../ui/Avatar.js';
-import '../../stringSet-bc59be04.js';
-import '../../index-7ce5a58a.js';
+import '../../stringSet-bfbe6996.js';
+import '../../index-139e5f19.js';
 import '../../withSendbird.js';
-import '../../_rollupPluginBabelHelpers-5ef7889e.js';
+import '../../_rollupPluginBabelHelpers-42f11fe4.js';
 import 'prop-types';
-import '../../tslib.es6-5837fd36.js';
+import '../../tslib.es6-5cbf2d41.js';
 import '../../ui/ImageRenderer.js';
 import '../../ui/Icon.js';
-import '../../uuid-bf348b66.js';
+import '../../uuid-ffa79983.js';
 
 var ChannelListHeader = function (_a) {
   var _b;

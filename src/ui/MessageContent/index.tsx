@@ -20,6 +20,7 @@ import ClientAdminMessage from '../AdminMessage';
 import TextMessageItemBody from '../TextMessageItemBody';
 import FileMessageItemBody from '../FileMessageItemBody';
 import ThumbnailMessageItemBody from '../ThumbnailMessageItemBody';
+import S3ThumbnailMessageItemBody from '../S3ThumbnailMessageItemBody';
 import OGMessageItemBody from '../OGMessageItemBody';
 import UnknownMessageItemBody from '../UnknownMessageItemBody';
 import QuoteMessage from '../QuoteMessage';
@@ -32,6 +33,7 @@ import {
   isOGMessage,
   isThumbnailMessage,
   getSenderName,
+  isS3ImageMessage,
 } from '../../utils';
 import { UserProfileContext } from '../../lib/UserProfileContext';
 import { ReplyType } from '../../module.js';
@@ -40,6 +42,7 @@ import useSendbirdStateContext from '../../hooks/useSendbirdStateContext';
 import { GroupChannel } from '@sendbird/chat/groupChannel';
 import { EmojiContainer } from '@sendbird/chat';
 import { AdminMessage, FileMessage, UserMessage } from '@sendbird/chat/message';
+import { FileInputContext } from '../../smart-components/App';
 
 interface Props {
   className?: string | Array<string>;
@@ -85,6 +88,7 @@ export default function MessageContent({
   const { dateLocale } = useLocalization();
   const { config } = useSendbirdStateContext?.() || {};
   const { disableUserProfile, renderUserProfile } = useContext(UserProfileContext);
+  const { externalBucketUrl } = useContext<FileInputContext>(FileInputContext);
   const avatarRef = useRef(null);
   const [mouseHover, setMouseHover] = useState(false);
   const [supposedHover, setSupposedHover] = useState(false);
@@ -221,13 +225,22 @@ export default function MessageContent({
             </div>
           )}
           {/* message item body components */}
-          {isTextMessage(message as UserMessage) && (
+          {isTextMessage(message as UserMessage, externalBucketUrl) && (
             <TextMessageItemBody
               className="sendbird-message-content__middle__message-item-body"
               message={message as UserMessage}
               isByMe={isByMe}
               mouseHover={mouseHover}
               isMentionEnabled={config?.isMentionEnabled || false}
+            />
+          )}
+          {(isS3ImageMessage(message as UserMessage, externalBucketUrl)) && (
+            <S3ThumbnailMessageItemBody
+              className="sendbird-message-content__middle__message-item-body"
+              message={message as UserMessage}
+              isByMe={isByMe}
+              mouseHover={mouseHover}
+              showFileViewer={showFileViewer}
             />
           )}
           {(isOGMessage(message as UserMessage)) && (

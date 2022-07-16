@@ -32,7 +32,7 @@ const MessageInputWrapper = (): JSX.Element => {
   const maxUserMentionCount = userMention?.maxMentionCount || 10;
   const maxUserSuggestionCount = userMention?.maxSuggestionCount || 15;
 
-  const onFilePicked = useContext<FileInputContext>(FileInputContext);
+  const { onFilePicked } = useContext<FileInputContext>(FileInputContext);
   const { stringSet } = useContext(LocalizationContext);
   const [mentionNickname, setMentionNickname] = useState('');
   const [mentionedUsers, setMentionedUsers] = useState([]);

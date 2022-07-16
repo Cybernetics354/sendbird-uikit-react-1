@@ -2,19 +2,19 @@
 
 var React = require('react');
 var PropTypes = require('prop-types');
-var ui_Label = require('../index-7309809e.js');
-var LocalizationContext = require('../LocalizationContext-219f1540.js');
+var ui_Label = require('../index-9ad5c786.js');
+var LocalizationContext = require('../LocalizationContext-7124ef76.js');
 var ui_Icon = require('./Icon.js');
 var ui_IconButton = require('./IconButton.js');
 var ui_ChannelAvatar = require('./ChannelAvatar.js');
-require('../stringSet-49111b06.js');
-require('../index-6ada6170.js');
-require('../_rollupPluginBabelHelpers-404a108a.js');
+require('../stringSet-ca0cf06e.js');
+require('../index-80df9998.js');
+require('../_rollupPluginBabelHelpers-d0fefa20.js');
 require('./Avatar.js');
-require('../tslib.es6-c9f1dea2.js');
+require('../tslib.es6-87d8a6c3.js');
 require('./ImageRenderer.js');
-require('../uuid-428cb2f7.js');
-require('../utils-120e3fcc.js');
+require('../uuid-cfc8429e.js');
+require('../utils-2d9307d2.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

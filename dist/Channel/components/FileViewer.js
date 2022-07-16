@@ -1,27 +1,27 @@
 import React__default from 'react';
 import { createPortal } from 'react-dom';
+import { bk as Vt } from '../../__bundle-ba710a09-50a7d4d5.js';
 import Avatar from '../../ui/Avatar.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../../index-dd7d2c20.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../../index-d9ca04bb.js';
 import Icon, { IconTypes, IconColors } from '../../ui/Icon.js';
-import { M as MODAL_ROOT } from '../../index-3ea1545e.js';
-import { A as isSupportedFileView, B as isVideo, C as isImage } from '../../index-5b610291.js';
+import { M as MODAL_ROOT } from '../../index-ec60ce57.js';
+import { C as isSupportedFileView, D as isVideo, E as isImage } from '../../index-5ddc9ee9.js';
 import useSendbirdStateContext from '../../useSendbirdStateContext.js';
-import { u as useChannelContext } from '../../ChannelProvider-b32f7603.js';
-import '../../tslib.es6-5837fd36.js';
+import { u as useChannelContext } from '../../ChannelProvider-477ebebb.js';
+import '../../tslib.es6-5cbf2d41.js';
 import '../../ui/ImageRenderer.js';
 import 'prop-types';
-import '../../uuid-bf348b66.js';
-import '../../stringSet-bc59be04.js';
+import '../../uuid-ffa79983.js';
+import '../../stringSet-bfbe6996.js';
 import '../../withSendbird.js';
-import '../../_rollupPluginBabelHelpers-5ef7889e.js';
-import '../../UserProfileContext-c80e77ff.js';
-import '../../index-f9f73baa.js';
-import '../../index-7ce5a58a.js';
-import '../../topics-16b6b21b.js';
-import '../../compareIds-625ff628.js';
-import '../../const-54c1f5b2.js';
-import '../../groupChannel-31808834.js';
-import '../../__bundle-ba710a09-d0f8c8de.js';
+import '../../_rollupPluginBabelHelpers-42f11fe4.js';
+import '../../UserProfileContext-0d690a96.js';
+import '../../index-4cc90022.js';
+import '../../index-139e5f19.js';
+import '../../topics-5b2e6feb.js';
+import '../../compareIds-8f332743.js';
+import '../../const-b6b0314e.js';
+import '../../groupChannel-5d4b44d8.js';
 import '../../ui/ContextMenu.js';
 import '../../ui/SortByRow.js';
 import '../../ui/ReactionButton.js';
@@ -121,17 +121,37 @@ var FileViewer = function (_a) {
       message = _a.message;
   var deleteMessage = useChannelContext().deleteMessage;
   var sender = message.sender,
-      type = message.type,
-      url = message.url,
-      _e = message.name,
-      name = _e === void 0 ? '' : _e,
       threadInfo = message.threadInfo;
   var user = (_c = (_b = useSendbirdStateContext()) === null || _b === void 0 ? void 0 : _b.config) === null || _c === void 0 ? void 0 : _c.userId;
   var isByMe = user === ((_d = message === null || message === void 0 ? void 0 : message.sender) === null || _d === void 0 ? void 0 : _d.userId);
   var disableDelete = (threadInfo === null || threadInfo === void 0 ? void 0 : threadInfo.replyCount) > 0;
   var profileUrl = sender.profileUrl,
-      _f = sender.nickname,
-      nickname = _f === void 0 ? '' : _f;
+      _e = sender.nickname,
+      nickname = _e === void 0 ? '' : _e;
+  var isUserMessage = message instanceof Vt;
+
+  if (isUserMessage) {
+    return /*#__PURE__*/createPortal( /*#__PURE__*/React__default.createElement(FileViewerComponent, {
+      profileUrl: profileUrl,
+      nickname: nickname,
+      type: 'image/jpeg',
+      url: message.message,
+      name: 'Image Message',
+      onCancel: onCancel,
+      onDelete: function () {
+        deleteMessage(message).then(function () {
+          onCancel();
+        });
+      },
+      isByMe: isByMe,
+      disableDelete: disableDelete
+    }), document.getElementById(MODAL_ROOT));
+  }
+
+  var type = message.type,
+      url = message.url,
+      _f = message.name,
+      name = _f === void 0 ? '' : _f;
   return /*#__PURE__*/createPortal( /*#__PURE__*/React__default.createElement(FileViewerComponent, {
     profileUrl: profileUrl,
     nickname: nickname,

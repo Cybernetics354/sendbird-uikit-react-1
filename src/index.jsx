@@ -13,6 +13,7 @@ ReactDOM.render(
       appId={YOUR_APP_ID}
       userId={USER_ID}
       onFilePicked={() => 'lorem cuy'}
+      externalBucketUrl="kompas"
     />
   </React.StrictMode>,
   document.getElementById('root'),

@@ -4,28 +4,28 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var reactDom = require('react-dom');
+var __bundleBa710a09 = require('../../__bundle-ba710a09-156cd2ec.js');
 var ui_Avatar = require('../../ui/Avatar.js');
-var ui_Label = require('../../index-7309809e.js');
+var ui_Label = require('../../index-9ad5c786.js');
 var ui_Icon = require('../../ui/Icon.js');
-var index$1 = require('../../index-b13049fa.js');
-var index = require('../../index-029c9c4b.js');
+var index$1 = require('../../index-74e1c32a.js');
+var index = require('../../index-f6c81602.js');
 var useSendbirdStateContext = require('../../useSendbirdStateContext.js');
-var Channel_context = require('../../ChannelProvider-25c55d83.js');
-require('../../tslib.es6-c9f1dea2.js');
+var Channel_context = require('../../ChannelProvider-082cba59.js');
+require('../../tslib.es6-87d8a6c3.js');
 require('../../ui/ImageRenderer.js');
 require('prop-types');
-require('../../uuid-428cb2f7.js');
-require('../../stringSet-49111b06.js');
+require('../../uuid-cfc8429e.js');
+require('../../stringSet-ca0cf06e.js');
 require('../../withSendbird.js');
-require('../../_rollupPluginBabelHelpers-404a108a.js');
-require('../../UserProfileContext-b48e5176.js');
-require('../../index-81be9e1d.js');
-require('../../index-6ada6170.js');
-require('../../topics-0f4db8a1.js');
-require('../../compareIds-87d05f16.js');
-require('../../const-a82a653e.js');
-require('../../groupChannel-665fb651.js');
-require('../../__bundle-ba710a09-a84711b1.js');
+require('../../_rollupPluginBabelHelpers-d0fefa20.js');
+require('../../UserProfileContext-4574eaff.js');
+require('../../index-184956b3.js');
+require('../../index-80df9998.js');
+require('../../topics-55f51c3d.js');
+require('../../compareIds-61a570a9.js');
+require('../../const-fb7538f3.js');
+require('../../groupChannel-e4c9b876.js');
 require('../../ui/ContextMenu.js');
 require('../../ui/SortByRow.js');
 require('../../ui/ReactionButton.js');
@@ -129,17 +129,37 @@ var FileViewer = function (_a) {
       message = _a.message;
   var deleteMessage = Channel_context.useChannelContext().deleteMessage;
   var sender = message.sender,
-      type = message.type,
-      url = message.url,
-      _e = message.name,
-      name = _e === void 0 ? '' : _e,
       threadInfo = message.threadInfo;
   var user = (_c = (_b = useSendbirdStateContext()) === null || _b === void 0 ? void 0 : _b.config) === null || _c === void 0 ? void 0 : _c.userId;
   var isByMe = user === ((_d = message === null || message === void 0 ? void 0 : message.sender) === null || _d === void 0 ? void 0 : _d.userId);
   var disableDelete = (threadInfo === null || threadInfo === void 0 ? void 0 : threadInfo.replyCount) > 0;
   var profileUrl = sender.profileUrl,
-      _f = sender.nickname,
-      nickname = _f === void 0 ? '' : _f;
+      _e = sender.nickname,
+      nickname = _e === void 0 ? '' : _e;
+  var isUserMessage = message instanceof __bundleBa710a09.Vt;
+
+  if (isUserMessage) {
+    return /*#__PURE__*/reactDom.createPortal( /*#__PURE__*/React__default["default"].createElement(FileViewerComponent, {
+      profileUrl: profileUrl,
+      nickname: nickname,
+      type: 'image/jpeg',
+      url: message.message,
+      name: 'Image Message',
+      onCancel: onCancel,
+      onDelete: function () {
+        deleteMessage(message).then(function () {
+          onCancel();
+        });
+      },
+      isByMe: isByMe,
+      disableDelete: disableDelete
+    }), document.getElementById(index$1.MODAL_ROOT));
+  }
+
+  var type = message.type,
+      url = message.url,
+      _f = message.name,
+      name = _f === void 0 ? '' : _f;
   return /*#__PURE__*/reactDom.createPortal( /*#__PURE__*/React__default["default"].createElement(FileViewerComponent, {
     profileUrl: profileUrl,
     nickname: nickname,

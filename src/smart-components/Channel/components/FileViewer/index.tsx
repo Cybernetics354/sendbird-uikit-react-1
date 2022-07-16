@@ -1,6 +1,6 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import type { FileMessage } from '@sendbird/chat/message';
+import { FileMessage, UserMessage } from '@sendbird/chat/message';
 
 import './file-viewer.scss';
 import Avatar from '../../../../ui/Avatar';
@@ -137,22 +137,50 @@ export const FileViewerComponent: React.FC<FileViewerUIProps> = ({
 
 type FileViewerProps = {
   onCancel:() => void;
-  message: FileMessage;
+  message: FileMessage | UserMessage;
 };
 
 const FileViewer: React.FC<FileViewerProps> = ({ onCancel, message }: FileViewerProps) => {
   const { deleteMessage } = useChannelContext();
   const {
     sender,
-    type,
-    url,
-    name = '',
     threadInfo,
   } = message;
   const user = useSendbirdStateContext()?.config?.userId;
   const isByMe = user === message?.sender?.userId;
   const disableDelete = threadInfo?.replyCount > 0;
   const { profileUrl, nickname = '' } = sender;
+
+  const isUserMessage = message instanceof UserMessage;
+  if (isUserMessage) {
+    return createPortal(
+      (
+        <FileViewerComponent
+          profileUrl={profileUrl}
+          nickname={nickname}
+          type={'image/jpeg'}
+          url={message.message}
+          name={'Image Message'}
+          onCancel={onCancel}
+          onDelete={() => {
+            deleteMessage(message as EveryMessage).then(() => {
+              onCancel();
+            });
+          }}
+          isByMe={isByMe}
+          disableDelete={disableDelete}
+        />
+      ),
+      document.getElementById(MODAL_ROOT),
+    );
+  }
+
+  const {
+    type,
+    url,
+    name = '',
+  } = message;
+
   return createPortal(
     (
       <FileViewerComponent

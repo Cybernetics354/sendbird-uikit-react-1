@@ -1,14 +1,14 @@
 'use strict';
 
 var React = require('react');
-var ui_Label = require('../index-7309809e.js');
+var ui_Label = require('../index-9ad5c786.js');
 var ui_Icon = require('./Icon.js');
 var ui_TextButton = require('./TextButton.js');
-var index = require('../index-029c9c4b.js');
+var index = require('../index-f6c81602.js');
 require('prop-types');
-require('../stringSet-49111b06.js');
-require('../color-bea80080.js');
-require('../tslib.es6-c9f1dea2.js');
+require('../stringSet-ca0cf06e.js');
+require('../color-670a89e1.js');
+require('../tslib.es6-87d8a6c3.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

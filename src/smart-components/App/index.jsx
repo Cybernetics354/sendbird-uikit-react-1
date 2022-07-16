@@ -17,6 +17,7 @@ import './index.scss';
 
 const FileInputContext = createContext({
   onFilePicked: (file) => file.name,
+  externalBucketUrl: '',
 });
 
 export { FileInputContext };
@@ -47,6 +48,7 @@ export default function App(props) {
     isTypingIndicatorEnabledOnChannelList,
     isMessageReceiptStatusEnabledOnChannelList,
     onFilePicked,
+    externalBucketUrl,
   } = props;
   const [currentChannelUrl, setCurrentChannelUrl] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
@@ -55,7 +57,7 @@ export default function App(props) {
   const [startingPoint, setStartingPoint] = useState(null);
 
   return (
-    <FileInputContext.Provider value={onFilePicked}>
+    <FileInputContext.Provider value={{ onFilePicked, externalBucketUrl }}>
       <Sendbird
         stringSet={stringSet}
         appId={appId}
@@ -198,6 +200,7 @@ App.propTypes = {
   isTypingIndicatorEnabledOnChannelList: PropTypes.bool,
   isMessageReceiptStatusEnabledOnChannelList: PropTypes.bool,
   onFilePicked: PropTypes.any,
+  externalBucketUrl: PropTypes.string,
 };
 
 App.defaultProps = {
@@ -224,4 +227,5 @@ App.defaultProps = {
   isTypingIndicatorEnabledOnChannelList: false,
   isMessageReceiptStatusEnabledOnChannelList: false,
   onFilePicked: (file) => file.name,
+  externalBucketUrl: '',
 };

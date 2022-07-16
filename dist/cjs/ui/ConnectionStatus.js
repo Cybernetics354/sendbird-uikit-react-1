@@ -2,11 +2,11 @@
 
 var React = require('react');
 var ui_Icon = require('./Icon.js');
-var ui_Label = require('../index-7309809e.js');
-var LocalizationContext = require('../LocalizationContext-219f1540.js');
+var ui_Label = require('../index-9ad5c786.js');
+var LocalizationContext = require('../LocalizationContext-7124ef76.js');
 require('prop-types');
-require('../stringSet-49111b06.js');
-require('../index-6ada6170.js');
+require('../stringSet-ca0cf06e.js');
+require('../index-80df9998.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

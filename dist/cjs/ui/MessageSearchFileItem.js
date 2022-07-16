@@ -1,19 +1,19 @@
 'use strict';
 
-var tslib_es6 = require('../tslib.es6-c9f1dea2.js');
+var tslib_es6 = require('../tslib.es6-87d8a6c3.js');
 var React = require('react');
 var ui_Avatar = require('./Avatar.js');
 var ui_Icon = require('./Icon.js');
-var ui_Label = require('../index-7309809e.js');
-var LocalizationContext = require('../LocalizationContext-219f1540.js');
-var index$1 = require('../index-81be9e1d.js');
-var index = require('../index-60d981da.js');
+var ui_Label = require('../index-9ad5c786.js');
+var LocalizationContext = require('../LocalizationContext-7124ef76.js');
+var index$1 = require('../index-184956b3.js');
+var index = require('../index-530dda81.js');
 require('./ImageRenderer.js');
 require('prop-types');
-require('../uuid-428cb2f7.js');
-require('../stringSet-49111b06.js');
-require('../index-6ada6170.js');
-require('../index-4f25ef8a.js');
+require('../uuid-cfc8429e.js');
+require('../stringSet-ca0cf06e.js');
+require('../index-80df9998.js');
+require('../index-358d0bff.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

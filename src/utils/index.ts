@@ -165,7 +165,8 @@ export const isFileMessage = (message: AdminMessage | UserMessage | FileMessage)
 export const isOGMessage = (message: UserMessage): boolean => !!(
   message && isUserMessage(message) && message?.ogMetaData && message?.ogMetaData?.url
 );
-export const isTextMessage = (message: UserMessage): boolean => isUserMessage(message) && !isOGMessage(message);
+export const isS3ImageMessage = (message: UserMessage, contain: string): boolean => isUserMessage(message) && message.message.includes(contain);
+export const isTextMessage = (message: UserMessage, contain: string): boolean => isUserMessage(message) && !isOGMessage(message) && !isS3ImageMessage(message, contain);
 export const isThumbnailMessage = (message: FileMessage): boolean => message && isFileMessage(message) && isSupportedFileView(message.type);
 export const isImageMessage = (message: FileMessage): boolean => message && isThumbnailMessage(message) && isImage(message.type);
 export const isVideoMessage = (message: FileMessage): boolean => message && isThumbnailMessage(message) && isVideo(message.type);

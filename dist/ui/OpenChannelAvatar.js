@@ -1,14 +1,14 @@
 import React__default, { useContext, useMemo } from 'react';
 import Avatar from './Avatar.js';
-import { a as LocalizationContext } from '../LocalizationContext-c6c43024.js';
-import { b as getOpenChannelAvatar } from '../utils-767e3762.js';
-import '../tslib.es6-5837fd36.js';
+import { a as LocalizationContext } from '../LocalizationContext-6b2a3bfd.js';
+import { b as getOpenChannelAvatar } from '../utils-c1646812.js';
+import '../tslib.es6-5cbf2d41.js';
 import './ImageRenderer.js';
 import 'prop-types';
 import './Icon.js';
-import '../uuid-bf348b66.js';
-import '../stringSet-bc59be04.js';
-import '../index-7ce5a58a.js';
+import '../uuid-ffa79983.js';
+import '../stringSet-bfbe6996.js';
+import '../index-139e5f19.js';
 
 function ChannelAvatar(_a) {
   var channel = _a.channel,
