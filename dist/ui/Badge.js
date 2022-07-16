@@ -1,9 +1,9 @@
 import React__default, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-53585fab.js';
-import { a as LocalizationContext } from '../LocalizationContext-d3e49456.js';
-import '../stringSet-49030004.js';
-import '../index-a53c3ed1.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-2cd7fa96.js';
+import { a as LocalizationContext } from '../LocalizationContext-8a121e1d.js';
+import '../stringSet-955abea5.js';
+import '../index-76197404.js';
 
 function Badge(_ref) {
   let {

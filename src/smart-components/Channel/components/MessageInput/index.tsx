@@ -155,12 +155,13 @@ const MessageInputWrapper = (): JSX.Element => {
         }}
         onFileUpload={(file) => {
           // TODO: upload to s3
-          const result = onFilePicked(file);
-          if(result) {
-            sendMessage({
-              message: result,
-            })
-          }
+          onFilePicked(file).then((result) => {
+            if(result) {
+              sendMessage({
+                message: result,
+              })
+            }
+          });
 
           // sendFileMessage(file, quoteMessage);
           setQuoteMessage(null);

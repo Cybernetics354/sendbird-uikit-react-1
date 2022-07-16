@@ -1,31 +1,31 @@
-import { a as __spreadArray } from '../tslib.es6-4a4f5c58.js';
+import { a as __spreadArray } from '../tslib.es6-4021ca51.js';
 import React__default, { useContext, useRef, useState, useMemo, useEffect } from 'react';
-import { f as format } from '../index-35d9a787.js';
+import { f as format } from '../index-5588c8e9.js';
 import Avatar from './Avatar.js';
 import ContextMenu, { MenuItems, MenuItem } from './ContextMenu.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
 import IconButton from './IconButton.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-53585fab.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-2cd7fa96.js';
 import Loader from './Loader.js';
 import ConnectedUserProfile from './UserProfile.js';
-import { U as UserProfileContext } from '../UserProfileContext-153af432.js';
-import { u as useLocalization } from '../LocalizationContext-d3e49456.js';
-import { c as copyToClipboard } from '../utils-62d358b3.js';
-import { u as uuidv4 } from '../uuid-91011cda.js';
-import { c as checkIsByMe, g as getSenderFromMessage, s as showMenuTrigger, i as isFineCopy, a as isFineEdit, b as isFineResend, d as isFineDelete, e as checkIsPending, f as checkIsFailed } from '../openChannelUtils-c29ded89.js';
-import '../index-a53c3ed1.js';
+import { U as UserProfileContext } from '../UserProfileContext-aa0ce103.js';
+import { u as useLocalization } from '../LocalizationContext-8a121e1d.js';
+import { c as copyToClipboard } from '../utils-0e3add1a.js';
+import { u as uuidv4 } from '../uuid-c5fe47ff.js';
+import { c as checkIsByMe, g as getSenderFromMessage, s as showMenuTrigger, i as isFineCopy, a as isFineEdit, b as isFineResend, d as isFineDelete, e as checkIsPending, f as checkIsFailed } from '../openChannelUtils-fa8a1de7.js';
+import '../index-76197404.js';
 import './ImageRenderer.js';
 import 'prop-types';
-import '../index-fcb040ec.js';
-import '../_rollupPluginBabelHelpers-59897f6c.js';
+import '../index-2dbecfe3.js';
+import '../_rollupPluginBabelHelpers-4dd1a6d8.js';
 import 'react-dom';
 import './SortByRow.js';
-import '../stringSet-49030004.js';
+import '../stringSet-955abea5.js';
 import '../withSendbird.js';
 import '../sendbirdSelectors.js';
-import '../topics-480e2d9e.js';
-import '../utils-87c63da6.js';
-import '../index-d880236d.js';
+import '../topics-e07cc011.js';
+import '../utils-d8815494.js';
+import '../index-bd1b8bfb.js';
 
 function OpenchannelUserMessage(_a) {
   var className = _a.className,

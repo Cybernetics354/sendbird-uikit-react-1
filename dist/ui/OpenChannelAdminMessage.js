@@ -1,8 +1,8 @@
-import { a as __spreadArray } from '../tslib.es6-4a4f5c58.js';
+import { a as __spreadArray } from '../tslib.es6-4021ca51.js';
 import React__default from 'react';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-53585fab.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-2cd7fa96.js';
 import 'prop-types';
-import '../stringSet-49030004.js';
+import '../stringSet-955abea5.js';
 
 function OpenChannelAdminMessage(_a) {
   var className = _a.className,
