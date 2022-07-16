@@ -1,8 +1,8 @@
 import React__default from 'react';
 import PropTypes from 'prop-types';
-import { c as changeColorToClassName, C as Colors } from '../color-e35272b2.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-2cd7fa96.js';
-import '../stringSet-955abea5.js';
+import { c as changeColorToClassName, C as Colors } from '../color-9d1ce766.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-ed7103e1.js';
+import '../stringSet-acf9d2a1.js';
 
 function DateSeparator(_ref) {
   let {

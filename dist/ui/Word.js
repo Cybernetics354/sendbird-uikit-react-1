@@ -1,27 +1,27 @@
 import React__default from 'react';
-import { a as LabelTypography, b as LabelColors } from '../index-2cd7fa96.js';
+import { a as LabelTypography, b as LabelColors } from '../index-ed7103e1.js';
 import LinkLabel from './LinkLabel.js';
-import { u as uuidv4 } from '../uuid-c5fe47ff.js';
-import { u as convertWordToStringObj, S as StringObjType } from '../index-2dbecfe3.js';
+import { u as uuidv4 } from '../uuid-4b033040.js';
+import { u as convertWordToStringObj, S as StringObjType } from '../index-bb395be0.js';
 import MentionLabel from './MentionLabel.js';
 import 'prop-types';
-import '../stringSet-955abea5.js';
-import '../tslib.es6-4021ca51.js';
+import '../stringSet-acf9d2a1.js';
+import '../tslib.es6-bdfb18b0.js';
 import './ContextMenu.js';
-import '../_rollupPluginBabelHelpers-4dd1a6d8.js';
+import '../_rollupPluginBabelHelpers-2c484fe0.js';
 import 'react-dom';
 import './SortByRow.js';
 import './UserProfile.js';
-import '../LocalizationContext-8a121e1d.js';
-import '../index-76197404.js';
+import '../LocalizationContext-6dc0d190.js';
+import '../index-527c3bc4.js';
 import '../withSendbird.js';
 import '../sendbirdSelectors.js';
-import '../topics-e07cc011.js';
-import '../utils-d8815494.js';
+import '../topics-fc458762.js';
+import '../utils-c830dbcc.js';
 import './Avatar.js';
 import './ImageRenderer.js';
 import './Icon.js';
-import '../index-bd1b8bfb.js';
+import '../index-28e59bab.js';
 import '../useSendbirdStateContext.js';
 
 function Word(props) {

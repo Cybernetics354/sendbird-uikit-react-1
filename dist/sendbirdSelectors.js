@@ -1,5 +1,5 @@
-import { C as CREATE_CHANNEL, S as SEND_MESSAGE_START, a as SEND_USER_MESSAGE, b as SEND_FILE_MESSAGE, U as UPDATE_USER_MESSAGE, D as DELETE_MESSAGE } from './topics-e07cc011.js';
-import { n as noop } from './utils-d8815494.js';
+import { C as CREATE_CHANNEL, S as SEND_MESSAGE_START, a as SEND_USER_MESSAGE, b as SEND_FILE_MESSAGE, U as UPDATE_USER_MESSAGE, D as DELETE_MESSAGE } from './topics-fc458762.js';
+import { n as noop } from './utils-c830dbcc.js';
 
 /**
  * 1. UIKit Instances
