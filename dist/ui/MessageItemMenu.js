@@ -2,16 +2,16 @@ import React__default, { useContext, useRef } from 'react';
 import ContextMenu, { MenuItems, MenuItem } from './ContextMenu.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
 import IconButton from './IconButton.js';
-import { B as isUserMessage, a as isSentMessage, F as isFailedMessage, G as isPendingMessage, g as getClassName, H as copyToClipboard } from '../index-bb395be0.js';
-import { a as LocalizationContext } from '../LocalizationContext-6dc0d190.js';
+import { B as isUserMessage, a as isSentMessage, F as isFailedMessage, G as isPendingMessage, g as getClassName, H as copyToClipboard } from '../index-5075c241.js';
+import { a as LocalizationContext } from '../LocalizationContext-12a49911.js';
 import 'prop-types';
-import '../index-ed7103e1.js';
-import '../stringSet-acf9d2a1.js';
-import '../_rollupPluginBabelHelpers-2c484fe0.js';
+import '../index-b990bb50.js';
+import '../stringSet-1980c44a.js';
+import '../_rollupPluginBabelHelpers-edb8daf2.js';
 import 'react-dom';
 import './SortByRow.js';
-import '../tslib.es6-bdfb18b0.js';
-import '../index-527c3bc4.js';
+import '../tslib.es6-7262cbaf.js';
+import '../index-f2df602e.js';
 
 function MessageItemMenu(_a) {
   var className = _a.className,

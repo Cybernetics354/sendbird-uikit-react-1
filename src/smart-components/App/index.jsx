@@ -3,21 +3,25 @@
  * Can also be used as an example for creating
  * default chat apps
  */
-import React, { createContext, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { createContext, useState } from "react";
+import PropTypes from "prop-types";
 
-import Sendbird from '../../lib/Sendbird';
+import Sendbird from "../../lib/Sendbird";
 
-import ChannelList from '../ChannelList';
-import Channel from '../Channel';
-import ChannelSettings from '../ChannelSettings';
-import MessageSearchPannel from '../MessageSearch';
+import ChannelList from "../ChannelList";
+import Channel from "../Channel";
+import ChannelSettings from "../ChannelSettings";
+import MessageSearchPannel from "../MessageSearch";
 
-import './index.scss';
+import "./index.scss";
 
 const FileInputContext = createContext({
-  onFilePicked: (file) => file.name,
-  externalBucketUrl: '',
+  onFilePicked: (file) => {
+    return {
+      type: "upload-to-sendbird",
+    };
+  },
+  externalBucketUrl: "",
 });
 
 export { FileInputContext };
@@ -75,8 +79,12 @@ export default function App(props) {
         imageCompression={imageCompression}
         isReactionEnabled={isReactionEnabled}
         isMentionEnabled={isMentionEnabled}
-        isTypingIndicatorEnabledOnChannelList={isTypingIndicatorEnabledOnChannelList}
-        isMessageReceiptStatusEnabledOnChannelList={isMessageReceiptStatusEnabledOnChannelList}
+        isTypingIndicatorEnabledOnChannelList={
+          isTypingIndicatorEnabledOnChannelList
+        }
+        isMessageReceiptStatusEnabledOnChannelList={
+          isMessageReceiptStatusEnabledOnChannelList
+        }
       >
         <div className="sendbird-app__wrap">
           <div className="sendbird-app__channellist-wrap">
@@ -90,15 +98,15 @@ export default function App(props) {
                 if (channel?.url) {
                   setCurrentChannelUrl(channel.url);
                 } else {
-                  setCurrentChannelUrl('');
+                  setCurrentChannelUrl("");
                 }
               }}
             />
           </div>
           <div
             className={`
-              ${showSettings ? 'sendbird-app__conversation--settings-open' : ''}
-              ${showSearch ? 'sendbird-app__conversation--search-open' : ''}
+              ${showSettings ? "sendbird-app__conversation--settings-open" : ""}
+              ${showSearch ? "sendbird-app__conversation--search-open" : ""}
               sendbird-app__conversation-wrap
             `}
           >
@@ -179,35 +187,29 @@ App.propTypes = {
     ]),
   }),
   isReactionEnabled: PropTypes.bool,
-  replyType: PropTypes.oneOf(['NONE', 'QUOTE_REPLY', 'THREAD']),
+  replyType: PropTypes.oneOf(["NONE", "QUOTE_REPLY", "THREAD"]),
   showSearchIcon: PropTypes.bool,
   isMessageGroupingEnabled: PropTypes.bool,
   stringSet: PropTypes.objectOf(PropTypes.string),
   colorSet: PropTypes.objectOf(PropTypes.string),
   imageCompression: PropTypes.shape({
     compressionRate: PropTypes.number,
-    resizingWidth: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ]),
-    resizingHeight: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ]),
+    resizingWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    resizingHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
   disableAutoSelect: PropTypes.bool,
   isMentionEnabled: PropTypes.bool,
   isTypingIndicatorEnabledOnChannelList: PropTypes.bool,
   isMessageReceiptStatusEnabledOnChannelList: PropTypes.bool,
-  onFilePicked: PropTypes.any,
+  onFilePicked: PropTypes.object,
   externalBucketUrl: PropTypes.string,
 };
 
 App.defaultProps = {
-  accessToken: '',
-  theme: 'light',
-  nickname: '',
-  profileUrl: '',
+  accessToken: "",
+  theme: "light",
+  nickname: "",
+  profileUrl: "",
   userListQuery: null,
   dateLocale: null,
   allowProfileEdit: false,
@@ -218,7 +220,7 @@ App.defaultProps = {
   config: {},
   isReactionEnabled: true,
   isMentionEnabled: false,
-  replyType: 'NONE',
+  replyType: "NONE",
   isMessageGroupingEnabled: true,
   stringSet: null,
   colorSet: null,
@@ -226,6 +228,10 @@ App.defaultProps = {
   disableAutoSelect: false,
   isTypingIndicatorEnabledOnChannelList: false,
   isMessageReceiptStatusEnabledOnChannelList: false,
-  onFilePicked: (file) => file.name,
-  externalBucketUrl: '',
+  onFilePicked: (file) => {
+    return {
+      type: "upload-to-sendbird",
+    };
+  },
+  externalBucketUrl: "",
 };

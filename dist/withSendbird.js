@@ -1,4 +1,4 @@
-import { _ as _objectSpread2 } from './_rollupPluginBabelHelpers-2c484fe0.js';
+import { _ as _objectSpread2 } from './_rollupPluginBabelHelpers-edb8daf2.js';
 import React__default from 'react';
 
 const SendbirdSdkContext = /*#__PURE__*/React__default.createContext();

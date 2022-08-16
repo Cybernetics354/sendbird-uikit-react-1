@@ -1,18 +1,18 @@
-import type { User } from '@sendbird/chat';
+import type { User } from "@sendbird/chat";
 
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from "react";
 
-import './message-input.scss';
-import * as utils from '../../context/utils';
+import "./message-input.scss";
+import * as utils from "../../context/utils";
 
-import MessageInput from '../../../../ui/MessageInput';
-import QuoteMessageInput from '../../../../ui/QuoteMessageInput';
-import { LocalizationContext } from '../../../../lib/LocalizationContext';
-import { useChannelContext } from '../../context/ChannelProvider';
-import useSendbirdStateContext from '../../../../hooks/useSendbirdStateContext';
-import SuggestedMentionList from '../SuggestedMentionList';
-import { MessageInputKeys } from '../../../../ui/MessageInput/const';
-import { FileInputContext } from '../../../../smart-components/App';
+import MessageInput from "../../../../ui/MessageInput";
+import QuoteMessageInput from "../../../../ui/QuoteMessageInput";
+import { LocalizationContext } from "../../../../lib/LocalizationContext";
+import { useChannelContext } from "../../context/ChannelProvider";
+import useSendbirdStateContext from "../../../../hooks/useSendbirdStateContext";
+import SuggestedMentionList from "../SuggestedMentionList";
+import { MessageInputKeys } from "../../../../ui/MessageInput/const";
+import { FileInputContext } from "../../../../smart-components/App";
 
 const MessageInputWrapper = (): JSX.Element => {
   const {
@@ -34,29 +34,31 @@ const MessageInputWrapper = (): JSX.Element => {
 
   const { onFilePicked } = useContext<FileInputContext>(FileInputContext);
   const { stringSet } = useContext(LocalizationContext);
-  const [mentionNickname, setMentionNickname] = useState('');
+  const [mentionNickname, setMentionNickname] = useState("");
   const [mentionedUsers, setMentionedUsers] = useState([]);
   const [mentionedUserIds, setMentionedUserIds] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [mentionSuggestedUsers, setMentionSuggestedUsers] = useState([]);
   const [ableMention, setAbleMention] = useState(true);
   const [messageInputEvent, setMessageInputEvent] = useState(null);
-  const disabled = !initialized
-    || utils.isDisabledBecauseFrozen(channel)
-    || utils.isDisabledBecauseMuted(channel)
-    || !isOnline;
+  const disabled =
+    !initialized ||
+    utils.isDisabledBecauseFrozen(channel) ||
+    utils.isDisabledBecauseMuted(channel) ||
+    !isOnline;
   const isOperator = utils.isOperator(channel);
   const isBroadcast = channel?.isBroadcast;
 
-  const displaySuggestedMentionList = isOnline
-    && isMentionEnabled
-    && mentionNickname.length > 0
-    && !utils.isDisabledBecauseFrozen(channel)
-    && !utils.isDisabledBecauseMuted(channel);
+  const displaySuggestedMentionList =
+    isOnline &&
+    isMentionEnabled &&
+    mentionNickname.length > 0 &&
+    !utils.isDisabledBecauseFrozen(channel) &&
+    !utils.isDisabledBecauseMuted(channel);
 
   // Reset when channel changes
   useEffect(() => {
-    setMentionNickname('');
+    setMentionNickname("");
     setMentionedUsers([]);
     setMentionedUserIds([]);
     setSelectedUser(null);
@@ -74,15 +76,17 @@ const MessageInputWrapper = (): JSX.Element => {
   }, [mentionedUsers]);
 
   useEffect(() => {
-    setMentionedUsers(mentionedUsers.filter(({ userId }) => {
-      const i = mentionedUserIds.indexOf(userId);
-      if (i < 0) {
-        return false;
-      } else {
-        mentionedUserIds.splice(i, 1);
-        return true;
-      }
-    }));
+    setMentionedUsers(
+      mentionedUsers.filter(({ userId }) => {
+        const i = mentionedUserIds.indexOf(userId);
+        if (i < 0) {
+          return false;
+        } else {
+          mentionedUserIds.splice(i, 1);
+          return true;
+        }
+      })
+    );
   }, [mentionedUserIds]);
 
   // broadcast channel + not operator
@@ -92,32 +96,30 @@ const MessageInputWrapper = (): JSX.Element => {
   // other conditions
   return (
     <div className="sendbird-message-input-wrapper">
-      {
-        displaySuggestedMentionList && (
-          <SuggestedMentionList
-            targetNickname={mentionNickname}
-            inputEvent={messageInputEvent}
-            renderUserMentionItem={renderUserMentionItem}
-            onUserItemClick={(user) => {
-              if (user) {
-                setMentionedUsers([...mentionedUsers, user]);
-              }
-              setMentionNickname('');
-              setSelectedUser(user);
-              setMessageInputEvent(null);
-            }}
-            onFocusItemChange={() => {
-              setMessageInputEvent(null);
-            }}
-            onFetchUsers={(users) => {
-              setMentionSuggestedUsers(users);
-            }}
-            ableAddMention={ableMention}
-            maxMentionCount={maxUserMentionCount}
-            maxSuggestionCount={maxUserSuggestionCount}
-          />
-        )
-      }
+      {displaySuggestedMentionList && (
+        <SuggestedMentionList
+          targetNickname={mentionNickname}
+          inputEvent={messageInputEvent}
+          renderUserMentionItem={renderUserMentionItem}
+          onUserItemClick={(user) => {
+            if (user) {
+              setMentionedUsers([...mentionedUsers, user]);
+            }
+            setMentionNickname("");
+            setSelectedUser(user);
+            setMessageInputEvent(null);
+          }}
+          onFocusItemChange={() => {
+            setMessageInputEvent(null);
+          }}
+          onFetchUsers={(users) => {
+            setMentionSuggestedUsers(users);
+          }}
+          ableAddMention={ableMention}
+          maxMentionCount={maxUserMentionCount}
+          maxSuggestionCount={maxUserSuggestionCount}
+        />
+      )}
       {quoteMessage && (
         <div className="sendbird-message-input-wrapper__quote-message-input">
           <QuoteMessageInput
@@ -132,9 +134,12 @@ const MessageInputWrapper = (): JSX.Element => {
         mentionSelectedUser={selectedUser}
         isMentionEnabled={isMentionEnabled}
         placeholder={
-          (quoteMessage && stringSet.MESSAGE_INPUT__QUOTE_REPLY__PLACE_HOLDER)
-          || (utils.isDisabledBecauseFrozen(channel) && stringSet.MESSAGE_INPUT__PLACE_HOLDER__DISABLED)
-          || (utils.isDisabledBecauseMuted(channel) && stringSet.MESSAGE_INPUT__PLACE_HOLDER__MUTED)
+          (quoteMessage &&
+            stringSet.MESSAGE_INPUT__QUOTE_REPLY__PLACE_HOLDER) ||
+          (utils.isDisabledBecauseFrozen(channel) &&
+            stringSet.MESSAGE_INPUT__PLACE_HOLDER__DISABLED) ||
+          (utils.isDisabledBecauseMuted(channel) &&
+            stringSet.MESSAGE_INPUT__PLACE_HOLDER__MUTED)
         }
         ref={messageInputRef}
         disabled={disabled}
@@ -148,7 +153,7 @@ const MessageInputWrapper = (): JSX.Element => {
             mentionedUsers,
             mentionTemplate,
           });
-          setMentionNickname('');
+          setMentionNickname("");
           setMentionedUsers([]);
           setQuoteMessage(null);
           channel?.endTyping();
@@ -156,20 +161,27 @@ const MessageInputWrapper = (): JSX.Element => {
         onFileUpload={(file) => {
           // TODO: upload to s3
           onFilePicked(file).then((result) => {
-            if(result) {
-              sendMessage({
-                message: result,
-              })
+            if (!result) {
+              return;
+            }
+
+            console.log(result);
+
+            switch (result.type) {
+              case "message":
+                return sendMessage({ message: result.message });
+
+              case "upload-to-sendbird":
+                return sendFileMessage(file, quoteMessage);
             }
           });
 
-          // sendFileMessage(file, quoteMessage);
           setQuoteMessage(null);
         }}
         onUserMentioned={(user) => {
           if (selectedUser?.userId === user?.userId) {
             setSelectedUser(null);
-            setMentionNickname('');
+            setMentionNickname("");
           }
         }}
         onMentionStringChange={(mentionText) => {
@@ -179,8 +191,12 @@ const MessageInputWrapper = (): JSX.Element => {
           setMentionedUserIds(userIds);
         }}
         onKeyDown={(e) => {
-          if (displaySuggestedMentionList && mentionSuggestedUsers?.length > 0
-            && ((e.key === MessageInputKeys.Enter && ableMention) || e.key === MessageInputKeys.ArrowUp || e.key === MessageInputKeys.ArrowDown)
+          if (
+            displaySuggestedMentionList &&
+            mentionSuggestedUsers?.length > 0 &&
+            ((e.key === MessageInputKeys.Enter && ableMention) ||
+              e.key === MessageInputKeys.ArrowUp ||
+              e.key === MessageInputKeys.ArrowDown)
           ) {
             setMessageInputEvent(e);
             return true;
@@ -190,6 +206,6 @@ const MessageInputWrapper = (): JSX.Element => {
       />
     </div>
   );
-}
+};
 
 export default React.forwardRef(MessageInputWrapper);

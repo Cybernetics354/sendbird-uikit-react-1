@@ -1,17 +1,17 @@
-import { a as __spreadArray } from '../tslib.es6-bdfb18b0.js';
+import { a as __spreadArray } from '../tslib.es6-7262cbaf.js';
 import React__default from 'react';
 import Avatar from './Avatar.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-ed7103e1.js';
-import { u as useLocalization } from '../LocalizationContext-6dc0d190.js';
-import { f as format } from '../index-2133a7e3.js';
-import { i as isToday, a as isYesterday, f as formatRelative } from '../index-22b3d8ea.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-b990bb50.js';
+import { u as useLocalization } from '../LocalizationContext-12a49911.js';
+import { f as format } from '../index-2580d704.js';
+import { i as isToday, a as isYesterday, f as formatRelative } from '../index-79b4abe3.js';
 import './ImageRenderer.js';
 import 'prop-types';
-import '../uuid-4b033040.js';
-import '../stringSet-acf9d2a1.js';
-import '../index-527c3bc4.js';
-import '../index-567adb28.js';
+import '../uuid-5ca3889a.js';
+import '../stringSet-1980c44a.js';
+import '../index-f2df602e.js';
+import '../index-37a7f86a.js';
 
 function getCreatedAt(createdAt, locale) {
   var optionalParam = locale ? {

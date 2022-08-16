@@ -4,9 +4,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var useSendbirdStateContext = require('../useSendbirdStateContext.js');
-var UserProfileContext = require('../UserProfileContext-a3f3d44c.js');
+var UserProfileContext = require('../UserProfileContext-0b5ac2eb.js');
 require('../withSendbird.js');
-require('../_rollupPluginBabelHelpers-131d30dc.js');
+require('../_rollupPluginBabelHelpers-db05c769.js');
 require('prop-types');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }

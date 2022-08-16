@@ -1,6 +1,6 @@
 import React__default from 'react';
 import PropTypes from 'prop-types';
-import { c as changeColorToClassName, C as Colors } from '../color-9d1ce766.js';
+import { c as changeColorToClassName, C as Colors } from '../color-5ff88e0d.js';
 
 function TextButton(_ref) {
   let {
