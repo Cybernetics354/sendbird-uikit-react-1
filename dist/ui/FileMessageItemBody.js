@@ -1,12 +1,12 @@
 import React__default from 'react';
-import { b as LabelColors, L as Label, a as LabelTypography } from '../index-b990bb50.js';
+import { b as LabelColors, L as Label, a as LabelTypography } from '../index-a401bc58.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
 import TextButton from './TextButton.js';
-import { g as getClassName, M as getUIKitFileType, t as truncateString } from '../index-5075c241.js';
+import { g as getClassName, M as getUIKitFileType, t as truncateString } from '../index-ee45e5fc.js';
 import 'prop-types';
-import '../stringSet-1980c44a.js';
-import '../color-5ff88e0d.js';
-import '../tslib.es6-7262cbaf.js';
+import '../stringSet-e139b667.js';
+import '../color-105e93f7.js';
+import '../tslib.es6-1d5f2fa9.js';
 
 function FileMessageItemBody(_a) {
   var _b;

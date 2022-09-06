@@ -1,33 +1,33 @@
 'use strict';
 
 var React = require('react');
-var LocalizationContext = require('../../LocalizationContext-1d24d5aa.js');
-var ui_Label = require('../../index-c19c70c5.js');
+var LocalizationContext = require('../../LocalizationContext-ea1242a7.js');
+var ui_Label = require('../../index-2dfdb9de.js');
 var ui_TextButton = require('../../ui/TextButton.js');
 var ui_OpenChannelAvatar = require('../../ui/OpenChannelAvatar.js');
 var OpenChannelSettings_components_EditDetailsModal = require('./EditDetailsModal.js');
 var useSendbirdStateContext = require('../../useSendbirdStateContext.js');
 var OpenChannelSettings_context = require('../context.js');
-require('../../stringSet-39290f11.js');
-require('../../index-80f7ae1e.js');
+require('../../stringSet-c8c286da.js');
+require('../../index-10f7dd53.js');
 require('prop-types');
-require('../../color-6c9dea8c.js');
+require('../../color-35fbd517.js');
 require('../../ui/Avatar.js');
-require('../../tslib.es6-512de66a.js');
+require('../../tslib.es6-bd7bd76d.js');
 require('../../ui/ImageRenderer.js');
 require('../../ui/Icon.js');
-require('../../uuid-34245f96.js');
-require('../../utils-3d0a88cc.js');
+require('../../uuid-d427ce45.js');
+require('../../utils-0e1ac091.js');
 require('../../ui/Modal.js');
 require('react-dom');
-require('../../index-12d2e3e0.js');
+require('../../index-77afdf6b.js');
 require('../../ui/IconButton.js');
-require('../../_rollupPluginBabelHelpers-db05c769.js');
-require('../../index-0f67da42.js');
-require('../../utils-1b1f3464.js');
+require('../../_rollupPluginBabelHelpers-34e22b99.js');
+require('../../index-51cd7ad2.js');
+require('../../utils-ae4d63e2.js');
 require('../../ui/Input.js');
 require('../../withSendbird.js');
-require('../../UserProfileContext-0b5ac2eb.js');
+require('../../UserProfileContext-24790fe2.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

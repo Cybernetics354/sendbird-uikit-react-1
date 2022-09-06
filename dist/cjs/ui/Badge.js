@@ -2,10 +2,10 @@
 
 var React = require('react');
 var PropTypes = require('prop-types');
-var ui_Label = require('../index-c19c70c5.js');
-var LocalizationContext = require('../LocalizationContext-1d24d5aa.js');
-require('../stringSet-39290f11.js');
-require('../index-80f7ae1e.js');
+var ui_Label = require('../index-2dfdb9de.js');
+var LocalizationContext = require('../LocalizationContext-ea1242a7.js');
+require('../stringSet-c8c286da.js');
+require('../index-10f7dd53.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

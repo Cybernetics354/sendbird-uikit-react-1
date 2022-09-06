@@ -2,9 +2,9 @@
 
 var React = require('react');
 var PropTypes = require('prop-types');
-var color = require('../color-6c9dea8c.js');
-var ui_Label = require('../index-c19c70c5.js');
-require('../stringSet-39290f11.js');
+var color = require('../color-35fbd517.js');
+var ui_Label = require('../index-2dfdb9de.js');
+require('../stringSet-c8c286da.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

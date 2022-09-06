@@ -1,11 +1,11 @@
 import React__default, { useMemo } from 'react';
 import Avatar from './Avatar.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { g as generateDefaultAvatar, a as getChannelAvatarSource } from '../utils-48844a97.js';
-import '../tslib.es6-7262cbaf.js';
+import { g as generateDefaultAvatar, a as getChannelAvatarSource } from '../utils-4c07fc7c.js';
+import '../tslib.es6-1d5f2fa9.js';
 import './ImageRenderer.js';
 import 'prop-types';
-import '../uuid-5ca3889a.js';
+import '../uuid-6e50e4c4.js';
 
 function ChannelAvatar(_a) {
   var channel = _a.channel,

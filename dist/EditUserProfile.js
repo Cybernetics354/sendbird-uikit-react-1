@@ -1,28 +1,28 @@
 import React__default from 'react';
-import { E as EditUserProfileProvider, a as EditUserProfile } from './index-10b7b514.js';
+import { E as EditUserProfileProvider, a as EditUserProfile } from './index-b8139dfc.js';
 import './ui/Modal.js';
 import 'prop-types';
 import 'react-dom';
-import './LocalizationContext-12a49911.js';
-import './stringSet-1980c44a.js';
-import './index-f2df602e.js';
-import './index-4a28b1a1.js';
+import './LocalizationContext-e63b92dd.js';
+import './stringSet-e139b667.js';
+import './index-e851fa9b.js';
+import './index-e56e31b3.js';
 import './ui/IconButton.js';
-import './_rollupPluginBabelHelpers-edb8daf2.js';
+import './_rollupPluginBabelHelpers-a25c3f8a.js';
 import './ui/Icon.js';
-import './index-6b3586e6.js';
-import './index-b990bb50.js';
-import './utils-67d0347a.js';
+import './index-b422234e.js';
+import './index-a401bc58.js';
+import './utils-c794f866.js';
 import './useSendbirdStateContext.js';
 import './withSendbird.js';
 import './ui/Input.js';
 import './ui/Avatar.js';
-import './tslib.es6-7262cbaf.js';
+import './tslib.es6-1d5f2fa9.js';
 import './ui/ImageRenderer.js';
-import './uuid-5ca3889a.js';
+import './uuid-6e50e4c4.js';
 import './ui/TextButton.js';
-import './color-5ff88e0d.js';
-import './actionTypes-4dcbf9e4.js';
+import './color-105e93f7.js';
+import './actionTypes-19d999d4.js';
 
 var EditProfile = function (props) {
   var onEditProfile = props.onEditProfile,

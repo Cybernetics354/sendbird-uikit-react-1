@@ -1,7 +1,7 @@
 import React__default from 'react';
 import PropTypes from 'prop-types';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-b990bb50.js';
-import '../stringSet-1980c44a.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-a401bc58.js';
+import '../stringSet-e139b667.js';
 
 function Tooltip(_ref) {
   let {

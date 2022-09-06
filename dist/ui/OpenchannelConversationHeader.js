@@ -2,15 +2,15 @@ import React__default, { useContext } from 'react';
 import Avatar from './Avatar.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
 import IconButton from './IconButton.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-b990bb50.js';
-import { a as LocalizationContext } from '../LocalizationContext-12a49911.js';
-import '../tslib.es6-7262cbaf.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-a401bc58.js';
+import { a as LocalizationContext } from '../LocalizationContext-e63b92dd.js';
+import '../tslib.es6-1d5f2fa9.js';
 import './ImageRenderer.js';
 import 'prop-types';
-import '../uuid-5ca3889a.js';
-import '../_rollupPluginBabelHelpers-edb8daf2.js';
-import '../stringSet-1980c44a.js';
-import '../index-f2df602e.js';
+import '../uuid-6e50e4c4.js';
+import '../_rollupPluginBabelHelpers-a25c3f8a.js';
+import '../stringSet-e139b667.js';
+import '../index-e851fa9b.js';
 
 function OpenchannelConversationHeader(_a) {
   var coverImage = _a.coverImage,

@@ -1,18 +1,18 @@
 import React__default, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../index-b990bb50.js';
-import { a as LocalizationContext } from '../LocalizationContext-12a49911.js';
+import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../index-a401bc58.js';
+import { a as LocalizationContext } from '../LocalizationContext-e63b92dd.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
 import IconButton from './IconButton.js';
 import ChannelAvatar from './ChannelAvatar.js';
-import '../stringSet-1980c44a.js';
-import '../index-f2df602e.js';
-import '../_rollupPluginBabelHelpers-edb8daf2.js';
+import '../stringSet-e139b667.js';
+import '../index-e851fa9b.js';
+import '../_rollupPluginBabelHelpers-a25c3f8a.js';
 import './Avatar.js';
-import '../tslib.es6-7262cbaf.js';
+import '../tslib.es6-1d5f2fa9.js';
 import './ImageRenderer.js';
-import '../uuid-5ca3889a.js';
-import '../utils-48844a97.js';
+import '../uuid-6e50e4c4.js';
+import '../utils-4c07fc7c.js';
 
 const getChannelTitle = function () {
   var _channel$members;

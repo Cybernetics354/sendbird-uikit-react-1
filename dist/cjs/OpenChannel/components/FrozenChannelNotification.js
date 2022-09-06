@@ -1,10 +1,10 @@
 'use strict';
 
 var React = require('react');
-var LocalizationContext = require('../../LocalizationContext-1d24d5aa.js');
-var ui_Label = require('../../index-c19c70c5.js');
-require('../../stringSet-39290f11.js');
-require('../../index-80f7ae1e.js');
+var LocalizationContext = require('../../LocalizationContext-ea1242a7.js');
+var ui_Label = require('../../index-2dfdb9de.js');
+require('../../stringSet-c8c286da.js');
+require('../../index-10f7dd53.js');
 require('prop-types');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }

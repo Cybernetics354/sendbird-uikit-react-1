@@ -1,20 +1,20 @@
 import React__default, { useContext } from 'react';
-import { a as LocalizationContext } from '../LocalizationContext-12a49911.js';
+import { a as LocalizationContext } from '../LocalizationContext-e63b92dd.js';
 import withSendbirdContext from '../withSendbird.js';
 import { getSdk, getCreateGroupChannel } from '../sendbirdSelectors.js';
 import Avatar from './Avatar.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-b990bb50.js';
-import { B as Button, a as ButtonTypes } from '../index-6b3586e6.js';
-import '../stringSet-1980c44a.js';
-import '../index-f2df602e.js';
-import '../_rollupPluginBabelHelpers-edb8daf2.js';
-import '../topics-de8d1abb.js';
-import '../utils-67d0347a.js';
-import '../tslib.es6-7262cbaf.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-a401bc58.js';
+import { B as Button, a as ButtonTypes } from '../index-b422234e.js';
+import '../stringSet-e139b667.js';
+import '../index-e851fa9b.js';
+import '../_rollupPluginBabelHelpers-a25c3f8a.js';
+import '../topics-f928ee3e.js';
+import '../utils-c794f866.js';
+import '../tslib.es6-1d5f2fa9.js';
 import './ImageRenderer.js';
 import 'prop-types';
 import './Icon.js';
-import '../uuid-5ca3889a.js';
+import '../uuid-6e50e4c4.js';
 
 function UserProfile(_a) {
   var user = _a.user,

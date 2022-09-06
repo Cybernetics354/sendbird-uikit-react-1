@@ -88,7 +88,7 @@ export default function MessageContent({
   const { dateLocale } = useLocalization();
   const { config } = useSendbirdStateContext?.() || {};
   const { disableUserProfile, renderUserProfile } = useContext(UserProfileContext);
-  const { externalBucketUrl } = useContext<FileInputContext>(FileInputContext);
+  const { externalBucketUrl, renderCustomMessage } = useContext<FileInputContext>(FileInputContext);
   const avatarRef = useRef(null);
   const [mouseHover, setMouseHover] = useState(false);
   const [supposedHover, setSupposedHover] = useState(false);
@@ -106,6 +106,77 @@ export default function MessageContent({
   if (message?.isAdminMessage?.() || message?.messageType === 'admin') {
     return (<ClientAdminMessage message={message} />);
   }
+
+  function RenderMessageContent() {
+    const renderedItem = renderCustomMessage({
+      className: "sendbird-message-content__middle__message-item-body",
+      isMentionEnabled: config?.isMentionEnabled || false,
+      message,
+      isByMe,
+      mouseHover,
+      showFileViewer,
+    });
+
+    if (renderedItem) {
+      return <div>{ renderedItem }</div>
+    }
+
+    return <div>
+      {isTextMessage(message as UserMessage, externalBucketUrl) && (
+        <TextMessageItemBody
+          className="sendbird-message-content__middle__message-item-body"
+          message={message as UserMessage}
+          isByMe={isByMe}
+          mouseHover={mouseHover}
+          isMentionEnabled={config?.isMentionEnabled || false}
+        />
+      )}
+      {(isS3ImageMessage(message as UserMessage, externalBucketUrl)) && (
+        <S3ThumbnailMessageItemBody
+          className="sendbird-message-content__middle__message-item-body"
+          message={message as UserMessage}
+          isByMe={isByMe}
+          mouseHover={mouseHover}
+          showFileViewer={showFileViewer}
+        />
+      )}
+      {(isOGMessage(message as UserMessage)) && (
+        <OGMessageItemBody
+          className="sendbird-message-content__middle__message-item-body"
+          message={message as UserMessage}
+          isByMe={isByMe}
+          mouseHover={mouseHover}
+          isMentionEnabled={config?.isMentionEnabled || false}
+        />
+      )}
+      {(getUIKitMessageType((message as FileMessage)) === messageTypes.FILE) && (
+        <FileMessageItemBody
+          className="sendbird-message-content__middle__message-item-body"
+          message={message as FileMessage}
+          isByMe={isByMe}
+          mouseHover={mouseHover}
+        />
+      )}
+      {(isThumbnailMessage(message as FileMessage)) && (
+        <ThumbnailMessageItemBody
+          className="sendbird-message-content__middle__message-item-body"
+          message={message as FileMessage}
+          isByMe={isByMe}
+          mouseHover={mouseHover}
+          showFileViewer={showFileViewer}
+        />
+      )}
+      {(getUIKitMessageType((message as FileMessage)) === messageTypes.UNKNOWN) && (
+        <UnknownMessageItemBody
+          className="sendbird-message-content__middle__message-item-body"
+          message={message}
+          isByMe={isByMe}
+          mouseHover={mouseHover}
+        />
+      )}
+    </div>
+  }
+
   return (
     <div
       className={getClassName([className, 'sendbird-message-content', isByMeClassName])}
@@ -225,58 +296,7 @@ export default function MessageContent({
             </div>
           )}
           {/* message item body components */}
-          {isTextMessage(message as UserMessage, externalBucketUrl) && (
-            <TextMessageItemBody
-              className="sendbird-message-content__middle__message-item-body"
-              message={message as UserMessage}
-              isByMe={isByMe}
-              mouseHover={mouseHover}
-              isMentionEnabled={config?.isMentionEnabled || false}
-            />
-          )}
-          {(isS3ImageMessage(message as UserMessage, externalBucketUrl)) && (
-            <S3ThumbnailMessageItemBody
-              className="sendbird-message-content__middle__message-item-body"
-              message={message as UserMessage}
-              isByMe={isByMe}
-              mouseHover={mouseHover}
-              showFileViewer={showFileViewer}
-            />
-          )}
-          {(isOGMessage(message as UserMessage)) && (
-            <OGMessageItemBody
-              className="sendbird-message-content__middle__message-item-body"
-              message={message as UserMessage}
-              isByMe={isByMe}
-              mouseHover={mouseHover}
-              isMentionEnabled={config?.isMentionEnabled || false}
-            />
-          )}
-          {(getUIKitMessageType((message as FileMessage)) === messageTypes.FILE) && (
-            <FileMessageItemBody
-              className="sendbird-message-content__middle__message-item-body"
-              message={message as FileMessage}
-              isByMe={isByMe}
-              mouseHover={mouseHover}
-            />
-          )}
-          {(isThumbnailMessage(message as FileMessage)) && (
-            <ThumbnailMessageItemBody
-              className="sendbird-message-content__middle__message-item-body"
-              message={message as FileMessage}
-              isByMe={isByMe}
-              mouseHover={mouseHover}
-              showFileViewer={showFileViewer}
-            />
-          )}
-          {(getUIKitMessageType((message as FileMessage)) === messageTypes.UNKNOWN) && (
-            <UnknownMessageItemBody
-              className="sendbird-message-content__middle__message-item-body"
-              message={message}
-              isByMe={isByMe}
-              mouseHover={mouseHover}
-            />
-          )}
+          <RenderMessageContent />
           {/* reactions */}
           {(isReactionEnabled && message?.reactions?.length > 0) && (
             <div className={getClassName([

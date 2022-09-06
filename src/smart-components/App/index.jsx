@@ -22,6 +22,9 @@ const FileInputContext = createContext({
     };
   },
   externalBucketUrl: "",
+  renderCustomMessage: (props) => {
+    return null;
+  },
 });
 
 export { FileInputContext };
@@ -53,6 +56,7 @@ export default function App(props) {
     isMessageReceiptStatusEnabledOnChannelList,
     onFilePicked,
     externalBucketUrl,
+    renderCustomMessage
   } = props;
   const [currentChannelUrl, setCurrentChannelUrl] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
@@ -61,7 +65,7 @@ export default function App(props) {
   const [startingPoint, setStartingPoint] = useState(null);
 
   return (
-    <FileInputContext.Provider value={{ onFilePicked, externalBucketUrl }}>
+    <FileInputContext.Provider value={{ onFilePicked, externalBucketUrl, renderCustomMessage }}>
       <Sendbird
         stringSet={stringSet}
         appId={appId}
@@ -203,6 +207,7 @@ App.propTypes = {
   isMessageReceiptStatusEnabledOnChannelList: PropTypes.bool,
   onFilePicked: PropTypes.object,
   externalBucketUrl: PropTypes.string,
+  renderCustomMessage: PropTypes.object,
 };
 
 App.defaultProps = {
@@ -234,4 +239,7 @@ App.defaultProps = {
     };
   },
   externalBucketUrl: "",
+  renderCustomMessage: (props) => {
+    return null;
+  },
 };

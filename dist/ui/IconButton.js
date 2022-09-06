@@ -1,4 +1,4 @@
-import { _ as _objectSpread2 } from '../_rollupPluginBabelHelpers-edb8daf2.js';
+import { _ as _objectSpread2 } from '../_rollupPluginBabelHelpers-a25c3f8a.js';
 import React__default, { useState } from 'react';
 import PropTypes from 'prop-types';
 

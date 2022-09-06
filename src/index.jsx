@@ -31,6 +31,21 @@ ReactDOM.render(
         appId={YOUR_APP_ID}
         userId={USER_ID}
         onFilePicked={testing}
+        renderCustomMessage={(props) => {
+          const { message } = props;
+          const { message: messageContent } = message;
+
+          if (!messageContent) {
+            return null;
+          }
+
+          try {
+            const parsed = JSON.parse(messageContent);
+            return <h1>{parsed.orderID}</h1>;
+          } catch (e) {
+            return null;
+          }
+        }}
         externalBucketUrl="kompas"
       />
     </div>
