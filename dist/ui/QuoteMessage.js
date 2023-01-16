@@ -1,13 +1,13 @@
 import React__default, { useContext, useState } from 'react';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-a401bc58.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-96f2ca18.js';
 import ImageRenderer from './ImageRenderer.js';
-import { a as LocalizationContext } from '../LocalizationContext-e63b92dd.js';
-import { N as getUIKitFileTypes, g as getClassName, B as isUserMessage, d as isThumbnailMessage, D as isVideo, O as isGif, w as isFileMessage, C as isSupportedFileView, M as getUIKitFileType, t as truncateString } from '../index-ee45e5fc.js';
+import { a as LocalizationContext } from '../LocalizationContext-bdb56d81.js';
+import { N as getUIKitFileTypes, g as getClassName, B as isUserMessage, d as isThumbnailMessage, D as isVideo, O as isGif, w as isFileMessage, C as isSupportedFileView, M as getUIKitFileType, t as truncateString } from '../index-f2c869d7.js';
 import 'prop-types';
-import '../stringSet-e139b667.js';
-import '../index-e851fa9b.js';
-import '../tslib.es6-1d5f2fa9.js';
+import '../stringSet-1cad1dbf.js';
+import '../index-8d5e2563.js';
+import '../tslib.es6-6b1ce61a.js';
 
 function QuoteMessage(_a) {
   var _b;

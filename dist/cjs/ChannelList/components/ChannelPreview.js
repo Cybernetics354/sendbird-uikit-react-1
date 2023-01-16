@@ -4,35 +4,35 @@ var React = require('react');
 var ui_ChannelAvatar = require('../../ui/ChannelAvatar.js');
 var ui_Badge = require('../../ui/Badge.js');
 var ui_Icon = require('../../ui/Icon.js');
-var ui_Label = require('../../index-2dfdb9de.js');
-var index = require('../../index-0563a094.js');
-var index$1 = require('../../index-09c690af.js');
-var index$2 = require('../../index-6292ff33.js');
+var ui_Label = require('../../index-1ac2a868.js');
+var index = require('../../index-d74761dd.js');
+var index$1 = require('../../index-52d3e5e9.js');
+var index$2 = require('../../index-8daa2cfb.js');
 var useSendbirdStateContext = require('../../useSendbirdStateContext.js');
-var LocalizationContext = require('../../LocalizationContext-ea1242a7.js');
+var LocalizationContext = require('../../LocalizationContext-4edc1945.js');
 var ui_MentionUserLabel = require('../../ui/MentionUserLabel.js');
-var ChannelList_context = require('../../ChannelListProvider-65eb5db8.js');
+var ChannelList_context = require('../../ChannelListProvider-bffb9384.js');
 var Channel_components_TypingIndicator = require('../../Channel/components/TypingIndicator.js');
 var ui_MessageStatus = require('../../ui/MessageStatus.js');
 require('../../ui/Avatar.js');
-require('../../tslib.es6-bd7bd76d.js');
+require('../../tslib.es6-c3158c01.js');
 require('../../ui/ImageRenderer.js');
 require('prop-types');
-require('../../uuid-d427ce45.js');
-require('../../utils-0e1ac091.js');
-require('../../stringSet-c8c286da.js');
-require('../../index-c173eafb.js');
-require('../../index-10f7dd53.js');
+require('../../uuid-11d3ef5e.js');
+require('../../utils-48aa919f.js');
+require('../../stringSet-8a123999.js');
+require('../../index-749e1f81.js');
+require('../../index-1968df45.js');
 require('../../withSendbird.js');
-require('../../_rollupPluginBabelHelpers-34e22b99.js');
-require('../../groupChannel-a8a4082b.js');
-require('../../__bundle-ba710a09-af5d7380.js');
-require('../../topics-9b308b83.js');
-require('../../utils-ae4d63e2.js');
-require('../../UserProfileContext-24790fe2.js');
-require('../../ChannelProvider-c0942911.js');
-require('../../compareIds-9caf1355.js');
-require('../../const-a4d49809.js');
+require('../../_rollupPluginBabelHelpers-652929ec.js');
+require('../../groupChannel-4c8b1fc9.js');
+require('../../__bundle-ba710a09-8573aa4e.js');
+require('../../topics-1218aada.js');
+require('../../utils-f60a9a5a.js');
+require('../../UserProfileContext-80f2ddb9.js');
+require('../../ChannelProvider-8470d3ae.js');
+require('../../compareIds-99bee171.js');
+require('../../const-e7009964.js');
 require('../../ui/ContextMenu.js');
 require('react-dom');
 require('../../ui/SortByRow.js');
@@ -52,11 +52,10 @@ const getChannelTitle = function () {
 
   if (!(channel !== null && channel !== void 0 && channel.name) && !(channel !== null && channel !== void 0 && channel.members)) {
     return stringSet.NO_TITLE;
-  }
+  } // if (channel?.name && channel.name !== 'Group Channel') {
+  //   return channel.name;
+  // }
 
-  if (channel !== null && channel !== void 0 && channel.name && channel.name !== 'Group Channel') {
-    return channel.name;
-  }
 
   if ((channel === null || channel === void 0 ? void 0 : (_channel$members = channel.members) === null || _channel$members === void 0 ? void 0 : _channel$members.length) === 1) {
     return stringSet.NO_MEMBERS;

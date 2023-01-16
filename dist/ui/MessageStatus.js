@@ -1,14 +1,14 @@
-import { a as __spreadArray } from '../tslib.es6-1d5f2fa9.js';
+import { a as __spreadArray } from '../tslib.es6-6b1ce61a.js';
 import React__default, { useMemo } from 'react';
-import { f as format } from '../index-0daadd03.js';
+import { f as format } from '../index-6e7e7eaa.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-a401bc58.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-96f2ca18.js';
 import Loader from './Loader.js';
-import { m as getOutgoingMessageStates, r as getOutgoingMessageState, s as isSentStatus } from '../index-ee45e5fc.js';
-import { u as useLocalization } from '../LocalizationContext-e63b92dd.js';
-import '../index-e851fa9b.js';
+import { m as getOutgoingMessageStates, r as getOutgoingMessageState, s as isSentStatus } from '../index-f2c869d7.js';
+import { u as useLocalization } from '../LocalizationContext-bdb56d81.js';
+import '../index-8d5e2563.js';
 import 'prop-types';
-import '../stringSet-e139b667.js';
+import '../stringSet-1cad1dbf.js';
 
 var MessageStatusTypes = getOutgoingMessageStates();
 function MessageStatus(_a) {

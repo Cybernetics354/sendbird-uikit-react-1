@@ -2,8 +2,8 @@
 
 var React = require('react');
 var PropTypes = require('prop-types');
-var ui_Label = require('../index-2dfdb9de.js');
-require('../stringSet-c8c286da.js');
+var ui_Label = require('../index-1ac2a868.js');
+require('../stringSet-8a123999.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { SendbirdSdkContext } from './withSendbird.js';
-import './_rollupPluginBabelHelpers-a25c3f8a.js';
+import './_rollupPluginBabelHelpers-5522a8f6.js';
 
 /**
  * Example:

@@ -2,35 +2,35 @@ import React__default from 'react';
 import ChannelAvatar from '../../ui/ChannelAvatar.js';
 import Badge from '../../ui/Badge.js';
 import Icon, { IconTypes, IconColors } from '../../ui/Icon.js';
-import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../../index-a401bc58.js';
-import { i as isToday, a as isYesterday, f as formatRelative } from '../../index-b25a473a.js';
-import { f as format } from '../../index-0daadd03.js';
-import { t as truncateString, q as isEditedMessage } from '../../index-ee45e5fc.js';
+import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../../index-96f2ca18.js';
+import { i as isToday, a as isYesterday, f as formatRelative } from '../../index-c75c3d33.js';
+import { f as format } from '../../index-6e7e7eaa.js';
+import { t as truncateString, q as isEditedMessage } from '../../index-f2c869d7.js';
 import useSendbirdStateContext from '../../useSendbirdStateContext.js';
-import { u as useLocalization } from '../../LocalizationContext-e63b92dd.js';
+import { u as useLocalization } from '../../LocalizationContext-bdb56d81.js';
 import MentionUserLabel from '../../ui/MentionUserLabel.js';
-import { u as useChannelListContext } from '../../ChannelListProvider-67a9797a.js';
+import { u as useChannelListContext } from '../../ChannelListProvider-6181c85b.js';
 import { TypingIndicatorText } from '../../Channel/components/TypingIndicator.js';
 import MessageStatus from '../../ui/MessageStatus.js';
 import '../../ui/Avatar.js';
-import '../../tslib.es6-1d5f2fa9.js';
+import '../../tslib.es6-6b1ce61a.js';
 import '../../ui/ImageRenderer.js';
 import 'prop-types';
-import '../../uuid-6e50e4c4.js';
-import '../../utils-4c07fc7c.js';
-import '../../stringSet-e139b667.js';
-import '../../index-43893ec1.js';
-import '../../index-e851fa9b.js';
+import '../../uuid-21b2a5db.js';
+import '../../utils-ce7905db.js';
+import '../../stringSet-1cad1dbf.js';
+import '../../index-7183b40a.js';
+import '../../index-8d5e2563.js';
 import '../../withSendbird.js';
-import '../../_rollupPluginBabelHelpers-a25c3f8a.js';
-import '../../groupChannel-8bf47932.js';
-import '../../__bundle-ba710a09-60e8438d.js';
-import '../../topics-f928ee3e.js';
-import '../../utils-c794f866.js';
-import '../../UserProfileContext-9e885899.js';
-import '../../ChannelProvider-7f17dfa8.js';
-import '../../compareIds-a43728b9.js';
-import '../../const-92587921.js';
+import '../../_rollupPluginBabelHelpers-5522a8f6.js';
+import '../../groupChannel-bddb1f44.js';
+import '../../__bundle-ba710a09-e080d3fa.js';
+import '../../topics-e87f2985.js';
+import '../../utils-d6f171ef.js';
+import '../../UserProfileContext-7c91714e.js';
+import '../../ChannelProvider-4400f751.js';
+import '../../compareIds-14392765.js';
+import '../../const-1cfee98a.js';
 import '../../ui/ContextMenu.js';
 import 'react-dom';
 import '../../ui/SortByRow.js';
@@ -46,11 +46,10 @@ const getChannelTitle = function () {
 
   if (!(channel !== null && channel !== void 0 && channel.name) && !(channel !== null && channel !== void 0 && channel.members)) {
     return stringSet.NO_TITLE;
-  }
+  } // if (channel?.name && channel.name !== 'Group Channel') {
+  //   return channel.name;
+  // }
 
-  if (channel !== null && channel !== void 0 && channel.name && channel.name !== 'Group Channel') {
-    return channel.name;
-  }
 
   if ((channel === null || channel === void 0 ? void 0 : (_channel$members = channel.members) === null || _channel$members === void 0 ? void 0 : _channel$members.length) === 1) {
     return stringSet.NO_MEMBERS;

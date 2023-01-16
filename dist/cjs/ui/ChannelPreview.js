@@ -5,19 +5,19 @@ var PropTypes = require('prop-types');
 var ui_ChannelAvatar = require('./ChannelAvatar.js');
 var ui_Badge = require('./Badge.js');
 var ui_Icon = require('./Icon.js');
-var ui_Label = require('../index-2dfdb9de.js');
-var LocalizationContext = require('../LocalizationContext-ea1242a7.js');
-var index = require('../index-0563a094.js');
-var index$1 = require('../index-09c690af.js');
-var index$2 = require('../index-6292ff33.js');
+var ui_Label = require('../index-1ac2a868.js');
+var LocalizationContext = require('../LocalizationContext-4edc1945.js');
+var index = require('../index-d74761dd.js');
+var index$1 = require('../index-52d3e5e9.js');
+var index$2 = require('../index-8daa2cfb.js');
 require('./Avatar.js');
-require('../tslib.es6-bd7bd76d.js');
+require('../tslib.es6-c3158c01.js');
 require('./ImageRenderer.js');
-require('../uuid-d427ce45.js');
-require('../utils-0e1ac091.js');
-require('../stringSet-c8c286da.js');
-require('../index-10f7dd53.js');
-require('../index-c173eafb.js');
+require('../uuid-11d3ef5e.js');
+require('../utils-48aa919f.js');
+require('../stringSet-8a123999.js');
+require('../index-1968df45.js');
+require('../index-749e1f81.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

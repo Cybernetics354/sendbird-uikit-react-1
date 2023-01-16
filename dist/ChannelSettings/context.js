@@ -1,9 +1,9 @@
 import React__default, { useState, useEffect } from 'react';
 import useSendbirdStateContext from '../useSendbirdStateContext.js';
-import { a as UserProfileProvider } from '../UserProfileContext-9e885899.js';
-import { u as uuidv4 } from '../uuid-6e50e4c4.js';
+import { a as UserProfileProvider } from '../UserProfileContext-7c91714e.js';
+import { u as uuidv4 } from '../uuid-21b2a5db.js';
 import '../withSendbird.js';
-import '../_rollupPluginBabelHelpers-a25c3f8a.js';
+import '../_rollupPluginBabelHelpers-5522a8f6.js';
 import 'prop-types';
 
 var ChannelSettingsContext = /*#__PURE__*/React__default.createContext(undefined);

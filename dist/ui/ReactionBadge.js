@@ -1,7 +1,7 @@
 import React__default from 'react';
 import PropTypes from 'prop-types';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-a401bc58.js';
-import '../stringSet-e139b667.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-96f2ca18.js';
+import '../stringSet-1cad1dbf.js';
 
 const ReactionBadge = /*#__PURE__*/React__default.forwardRef((props, ref) => {
   const {
