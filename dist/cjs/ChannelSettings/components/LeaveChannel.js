@@ -3,22 +3,22 @@
 var React = require('react');
 var useSendbirdStateContext = require('../../useSendbirdStateContext.js');
 var ChannelSettings_context = require('../context.js');
-var utils = require('../../utils-f4c8ab45.js');
+var utils = require('../../utils-d52c5709.js');
 var ui_Modal = require('../../ui/Modal.js');
 require('../../withSendbird.js');
-require('../../_rollupPluginBabelHelpers-0825dba8.js');
-require('../../UserProfileContext-f85dab3b.js');
+require('../../_rollupPluginBabelHelpers-2157fc28.js');
+require('../../UserProfileContext-647b15e6.js');
 require('prop-types');
-require('../../uuid-0e49bd14.js');
+require('../../uuid-3cedbe50.js');
 require('react-dom');
-require('../../LocalizationContext-92b5f010.js');
-require('../../stringSet-827d08e2.js');
-require('../../index-5dca71f9.js');
-require('../../index-ef9f3a3e.js');
+require('../../LocalizationContext-06295289.js');
+require('../../stringSet-c0b7ef0b.js');
+require('../../index-46a833a2.js');
+require('../../index-2ebbabef.js');
 require('../../ui/IconButton.js');
 require('../../ui/Icon.js');
-require('../../index-865da959.js');
-require('../../index-c05adf2d.js');
+require('../../index-37c2c6ef.js');
+require('../../index-06ad9a23.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

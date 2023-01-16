@@ -1,31 +1,30 @@
 import React__default, { useContext } from 'react';
-import { a as LocalizationContext } from '../../LocalizationContext-f2486c30.js';
+import { a as LocalizationContext } from '../../LocalizationContext-d22b125b.js';
 import useSendbirdStateContext from '../../useSendbirdStateContext.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../../index-19cce0bb.js';
-import IconButton from '../../ui/IconButton.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../../index-af45308d.js';
 import Avatar from '../../ui/Avatar.js';
-import '../../stringSet-5c50e96e.js';
-import '../../index-bfc04e6e.js';
+import '../../stringSet-3b6413f0.js';
+import '../../index-b218dad1.js';
 import '../../withSendbird.js';
-import '../../_rollupPluginBabelHelpers-848c5853.js';
+import '../../_rollupPluginBabelHelpers-33833b5a.js';
 import 'prop-types';
-import '../../tslib.es6-19dec4e0.js';
+import '../../tslib.es6-cb5d3fd4.js';
 import '../../ui/ImageRenderer.js';
 import '../../ui/Icon.js';
-import '../../uuid-30725b60.js';
+import '../../uuid-361fa4d5.js';
 
 var ChannelListHeader = function (_a) {
   var _b;
 
-  var renderHeader = _a.renderHeader,
-      renderIconButton = _a.renderIconButton,
-      onEdit = _a.onEdit,
+  var renderHeader = _a.renderHeader;
+      _a.renderIconButton;
+      var onEdit = _a.onEdit,
       allowProfileEdit = _a.allowProfileEdit;
   var sbState = useSendbirdStateContext();
   var user = ((_b = sbState === null || sbState === void 0 ? void 0 : sbState.stores) === null || _b === void 0 ? void 0 : _b.userStore).user;
   var stringSet = useContext(LocalizationContext).stringSet;
   return /*#__PURE__*/React__default.createElement("div", {
-    className: ['sendbird-channel-header', allowProfileEdit ? 'sendbird-channel-header--allow-edit' : ''].join(' ')
+    className: ["sendbird-channel-header", allowProfileEdit ? "sendbird-channel-header--allow-edit" : ""].join(" ")
   }, renderHeader ? renderHeader() : /*#__PURE__*/React__default.createElement("div", {
     className: "sendbird-channel-header__title",
     role: "button",
@@ -53,9 +52,7 @@ var ChannelListHeader = function (_a) {
     className: "sendbird-channel-header__title__right__user-id",
     type: LabelTypography.BODY_2,
     color: LabelColors.ONBACKGROUND_2
-  }, user.userId))), /*#__PURE__*/React__default.createElement("div", {
-    className: "sendbird-channel-header__right-icon"
-  }, renderIconButton() || /*#__PURE__*/React__default.createElement(IconButton, null)));
+  }, user.userId))));
 };
 
 export { ChannelListHeader as default };

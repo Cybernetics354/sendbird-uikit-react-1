@@ -1,68 +1,57 @@
 import React__default, { useState } from 'react';
 import ChannelListHeader from './ChannelListHeader.js';
-import { AddChannel } from './AddChannel.js';
 import ChannelPreview from './ChannelPreview.js';
 import ChannelPreviewAction from './ChannelPreviewAction.js';
-import { u as useChannelListContext, F as FETCH_CHANNELS_START, a as FETCH_CHANNELS_SUCCESS, b as FETCH_CHANNELS_FAILURE, L as LEAVE_CHANNEL_SUCCESS, S as SET_CURRENT_CHANNEL } from '../../ChannelListProvider-0126fbc7.js';
+import { u as useChannelListContext, F as FETCH_CHANNELS_START, a as FETCH_CHANNELS_SUCCESS, b as FETCH_CHANNELS_FAILURE, L as LEAVE_CHANNEL_SUCCESS, S as SET_CURRENT_CHANNEL } from '../../ChannelListProvider-05e93e6a.js';
 import useSendbirdStateContext from '../../useSendbirdStateContext.js';
 import EditProfile from '../../EditUserProfile.js';
-import { P as PlaceHolder, a as PlaceHolderTypes } from '../../index-1fd9ce74.js';
-import '../../LocalizationContext-f2486c30.js';
-import '../../stringSet-5c50e96e.js';
-import '../../index-bfc04e6e.js';
-import '../../index-19cce0bb.js';
+import { P as PlaceHolder, a as PlaceHolderTypes } from '../../index-5e91d18b.js';
+import '../../LocalizationContext-d22b125b.js';
+import '../../stringSet-3b6413f0.js';
+import '../../index-b218dad1.js';
+import '../../index-af45308d.js';
 import 'prop-types';
-import '../../ui/IconButton.js';
-import '../../_rollupPluginBabelHelpers-848c5853.js';
 import '../../ui/Avatar.js';
-import '../../tslib.es6-19dec4e0.js';
+import '../../tslib.es6-cb5d3fd4.js';
 import '../../ui/ImageRenderer.js';
 import '../../ui/Icon.js';
-import '../../uuid-30725b60.js';
-import '../../CreateChannel.js';
-import '../../CreateChannel/components/CreateChannelUI.js';
-import '../../CreateChannelProvider-ed6269e0.js';
-import '../../sendbirdSelectors.js';
-import '../../topics-351221d8.js';
-import '../../utils-21bd7664.js';
-import '../../CreateChannel/components/InviteUsers.js';
-import '../../ui/Modal.js';
-import 'react-dom';
-import '../../index-3f12e269.js';
-import '../../index-9a801843.js';
-import '../../ui/UserListItem.js';
-import '../../UserProfileContext-8fcecbac.js';
-import '../../ui/MutedAvatarOverlay.js';
-import '../../ui/Checkbox.js';
-import '../../ui/UserProfile.js';
-import '../../withSendbird.js';
-import '../../ui/ContextMenu.js';
-import '../../index-42611471.js';
-import '../../ui/SortByRow.js';
-import '../../CreateChannel/components/SelectChannelType.js';
+import '../../uuid-361fa4d5.js';
 import '../../ui/ChannelAvatar.js';
-import '../../utils-e026572a.js';
+import '../../utils-1275ff37.js';
 import '../../ui/Badge.js';
-import '../../index-0f2c5759.js';
-import '../../index-c36a782e.js';
-import '../../index-a08d70ad.js';
+import '../../index-3686d447.js';
+import '../../index-82f04370.js';
+import '../../index-a4d30062.js';
+import '../../index-130c824d.js';
 import '../../ui/MentionUserLabel.js';
 import '../../Channel/components/TypingIndicator.js';
-import '../../groupChannel-64990697.js';
-import '../../__bundle-ba710a09-9d691cce.js';
-import '../../ChannelProvider-fa939f5a.js';
-import '../../compareIds-3145b5b2.js';
-import '../../const-38038f0e.js';
+import '../../groupChannel-bf257729.js';
+import '../../__bundle-ba710a09-823d594c.js';
+import '../../ChannelProvider-314c5144.js';
+import '../../UserProfileContext-701bbd1d.js';
+import '../../topics-72f59d50.js';
+import '../../_rollupPluginBabelHelpers-33833b5a.js';
+import '../../compareIds-f1c069c5.js';
+import '../../const-31ddacec.js';
+import '../../ui/ContextMenu.js';
+import 'react-dom';
+import '../../ui/SortByRow.js';
 import '../../ui/ReactionButton.js';
 import '../../ui/MessageStatus.js';
 import '../../ui/Loader.js';
-import '../../index-4c7c23c4.js';
+import '../../ui/IconButton.js';
+import '../../utils-c7026724.js';
+import '../../ui/Modal.js';
+import '../../index-54145d22.js';
+import '../../index-44bf1b6e.js';
+import '../../withSendbird.js';
+import '../../index-cd235668.js';
 import '../../ui/Input.js';
 import '../../ui/TextButton.js';
-import '../../color-84694748.js';
-import '../../actionTypes-24185b19.js';
+import '../../color-e2562070.js';
+import '../../actionTypes-47000015.js';
 
-var DELIVERY_RECIPT = 'delivery_receipt';
+var DELIVERY_RECIPT = "delivery_receipt";
 
 var ChannelListUI = function (props) {
   var _a, _b;
@@ -104,10 +93,7 @@ var ChannelListUI = function (props) {
         setShowProfileEdit(true);
       }
     },
-    allowProfileEdit: allowProfileEdit,
-    renderIconButton: function () {
-      return /*#__PURE__*/React__default.createElement(AddChannel, null);
-    }
+    allowProfileEdit: allowProfileEdit
   })), showProfileEdit && /*#__PURE__*/React__default.createElement(EditProfile, {
     onThemeChange: onThemeChange,
     onCancel: function () {
@@ -123,7 +109,7 @@ var ChannelListUI = function (props) {
       var fetchMore = target.clientHeight + target.scrollTop === target.scrollHeight;
 
       if (fetchMore && (channelSource === null || channelSource === void 0 ? void 0 : channelSource.hasNext)) {
-        logger.info('ChannelList: Fetching more channels');
+        logger.info("ChannelList: Fetching more channels");
         channelListDispatcher({
           type: FETCH_CHANNELS_START,
           payload: null
@@ -131,7 +117,7 @@ var ChannelListUI = function (props) {
         channelSource.next().then(function (channelList) {
           var _a, _b;
 
-          logger.info('ChannelList: Fetching channels successful', channelList);
+          logger.info("ChannelList: Fetching channels successful", channelList);
           channelListDispatcher({
             type: FETCH_CHANNELS_SUCCESS,
             payload: channelList
@@ -141,7 +127,7 @@ var ChannelListUI = function (props) {
           });
 
           if (canSetMarkAsDelivered) {
-            logger.info('ChannelList: Marking all channels as read'); // eslint-disable-next-line no-unused-expressions
+            logger.info("ChannelList: Marking all channels as read"); // eslint-disable-next-line no-unused-expressions
 
             channelList === null || channelList === void 0 ? void 0 : channelList.forEach(function (c, idx) {
               // Plan-based rate limits - minimum limit is 5 requests per second
@@ -151,7 +137,7 @@ var ChannelListUI = function (props) {
             });
           }
         }).catch(function (err) {
-          logger.info('ChannelList: Fetching channels failed', err);
+          logger.info("ChannelList: Fetching channels failed", err);
           channelListDispatcher({
             type: FETCH_CHANNELS_FAILURE,
             payload: err
@@ -159,15 +145,15 @@ var ChannelListUI = function (props) {
         });
       }
     }
-  }, sdkError && (renderPlaceHolderError && typeof renderPlaceHolderError === 'function' ? renderPlaceHolderError === null || renderPlaceHolderError === void 0 ? void 0 : renderPlaceHolderError() : /*#__PURE__*/React__default.createElement(PlaceHolder, {
+  }, sdkError && (renderPlaceHolderError && typeof renderPlaceHolderError === "function" ? renderPlaceHolderError === null || renderPlaceHolderError === void 0 ? void 0 : renderPlaceHolderError() : /*#__PURE__*/React__default.createElement(PlaceHolder, {
     type: PlaceHolderTypes.WRONG
   })), /*#__PURE__*/React__default.createElement("div", null, allChannels && allChannels.map(function (channel, idx) {
     var onLeaveChannel = function (c, cb) {
-      logger.info('ChannelList: Leaving channel', c);
+      logger.info("ChannelList: Leaving channel", c);
       c.leave().then(function (res) {
-        logger.info('ChannelList: Leaving channel success', res);
+        logger.info("ChannelList: Leaving channel success", res);
 
-        if (cb && typeof cb === 'function') {
+        if (cb && typeof cb === "function") {
           cb(res, null);
         }
 
@@ -176,9 +162,9 @@ var ChannelListUI = function (props) {
           payload: channel === null || channel === void 0 ? void 0 : channel.url
         });
       }).catch(function (err) {
-        logger.error('ChannelList: Leaving channel failed', err);
+        logger.error("ChannelList: Leaving channel failed", err);
 
-        if (cb && typeof cb === 'function') {
+        if (cb && typeof cb === "function") {
           cb(null, err);
         }
       });
@@ -189,7 +175,7 @@ var ChannelListUI = function (props) {
         return;
       }
 
-      logger.info('ChannelList: Clicked on channel:', channel);
+      logger.info("ChannelList: Clicked on channel:", channel);
       channelListDispatcher({
         type: SET_CURRENT_CHANNEL,
         payload: channel
@@ -224,9 +210,9 @@ var ChannelListUI = function (props) {
         });
       }
     });
-  })), (!sdkIntialized || loading) && (renderPlaceHolderLoading && typeof renderPlaceHolderLoading === 'function' ? renderPlaceHolderLoading === null || renderPlaceHolderLoading === void 0 ? void 0 : renderPlaceHolderLoading() : /*#__PURE__*/React__default.createElement(PlaceHolder, {
+  })), (!sdkIntialized || loading) && (renderPlaceHolderLoading && typeof renderPlaceHolderLoading === "function" ? renderPlaceHolderLoading === null || renderPlaceHolderLoading === void 0 ? void 0 : renderPlaceHolderLoading() : /*#__PURE__*/React__default.createElement(PlaceHolder, {
     type: PlaceHolderTypes.LOADING
-  })), (!allChannels || allChannels.length === 0) && (renderPlaceHolderEmptyList && typeof renderPlaceHolderEmptyList === 'function' ? renderPlaceHolderEmptyList === null || renderPlaceHolderEmptyList === void 0 ? void 0 : renderPlaceHolderEmptyList() : /*#__PURE__*/React__default.createElement(PlaceHolder, {
+  })), (!allChannels || allChannels.length === 0) && (renderPlaceHolderEmptyList && typeof renderPlaceHolderEmptyList === "function" ? renderPlaceHolderEmptyList === null || renderPlaceHolderEmptyList === void 0 ? void 0 : renderPlaceHolderEmptyList() : /*#__PURE__*/React__default.createElement(PlaceHolder, {
     type: PlaceHolderTypes.NO_CHANNELS
   }))));
 };

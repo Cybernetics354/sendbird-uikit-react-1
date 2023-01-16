@@ -2,73 +2,62 @@
 
 var React = require('react');
 var ChannelList_components_ChannelListHeader = require('./ChannelListHeader.js');
-var ChannelList_components_AddChannel = require('./AddChannel.js');
 var ChannelList_components_ChannelPreview = require('./ChannelPreview.js');
 var ChannelList_components_ChannelPreviewAction = require('./ChannelPreviewAction.js');
-var ChannelList_context = require('../../ChannelListProvider-da4f183e.js');
+var ChannelList_context = require('../../ChannelListProvider-902aec5a.js');
 var useSendbirdStateContext = require('../../useSendbirdStateContext.js');
 var EditUserProfile = require('../../EditUserProfile.js');
-var ui_PlaceHolder = require('../../index-e1fc3c05.js');
-require('../../LocalizationContext-92b5f010.js');
-require('../../stringSet-827d08e2.js');
-require('../../index-5dca71f9.js');
-require('../../index-c05adf2d.js');
+var ui_PlaceHolder = require('../../index-32ee0d93.js');
+require('../../LocalizationContext-06295289.js');
+require('../../stringSet-c0b7ef0b.js');
+require('../../index-46a833a2.js');
+require('../../index-06ad9a23.js');
 require('prop-types');
-require('../../ui/IconButton.js');
-require('../../_rollupPluginBabelHelpers-0825dba8.js');
 require('../../ui/Avatar.js');
-require('../../tslib.es6-137d7ef9.js');
+require('../../tslib.es6-43d4c54c.js');
 require('../../ui/ImageRenderer.js');
 require('../../ui/Icon.js');
-require('../../uuid-0e49bd14.js');
-require('../../CreateChannel.js');
-require('../../CreateChannel/components/CreateChannelUI.js');
-require('../../CreateChannelProvider-df55f07d.js');
-require('../../sendbirdSelectors.js');
-require('../../topics-74cfc1f1.js');
-require('../../utils-f4c8ab45.js');
-require('../../CreateChannel/components/InviteUsers.js');
-require('../../ui/Modal.js');
-require('react-dom');
-require('../../index-ef9f3a3e.js');
-require('../../index-865da959.js');
-require('../../ui/UserListItem.js');
-require('../../UserProfileContext-f85dab3b.js');
-require('../../ui/MutedAvatarOverlay.js');
-require('../../ui/Checkbox.js');
-require('../../ui/UserProfile.js');
-require('../../withSendbird.js');
-require('../../ui/ContextMenu.js');
-require('../../index-bcaa279b.js');
-require('../../ui/SortByRow.js');
-require('../../CreateChannel/components/SelectChannelType.js');
+require('../../uuid-3cedbe50.js');
 require('../../ui/ChannelAvatar.js');
-require('../../utils-b11dec2c.js');
+require('../../utils-d606193c.js');
 require('../../ui/Badge.js');
-require('../../index-dcc76ddf.js');
-require('../../index-dda66c4b.js');
-require('../../index-6a589d8a.js');
+require('../../index-21673199.js');
+require('../../index-59877f2c.js');
+require('../../index-8934b8f3.js');
+require('../../index-8f34af30.js');
 require('../../ui/MentionUserLabel.js');
 require('../../Channel/components/TypingIndicator.js');
-require('../../groupChannel-7bc8e546.js');
-require('../../__bundle-ba710a09-d8fef857.js');
-require('../../ChannelProvider-7b1bce6b.js');
-require('../../compareIds-e1644f6f.js');
-require('../../const-1f118907.js');
+require('../../groupChannel-8d0a6976.js');
+require('../../__bundle-ba710a09-ff4335dc.js');
+require('../../ChannelProvider-366d865b.js');
+require('../../UserProfileContext-647b15e6.js');
+require('../../topics-e5b39d00.js');
+require('../../_rollupPluginBabelHelpers-2157fc28.js');
+require('../../compareIds-191f1b57.js');
+require('../../const-635e3ce8.js');
+require('../../ui/ContextMenu.js');
+require('react-dom');
+require('../../ui/SortByRow.js');
 require('../../ui/ReactionButton.js');
 require('../../ui/MessageStatus.js');
 require('../../ui/Loader.js');
-require('../../index-6a4143fa.js');
+require('../../ui/IconButton.js');
+require('../../utils-d52c5709.js');
+require('../../ui/Modal.js');
+require('../../index-2ebbabef.js');
+require('../../index-37c2c6ef.js');
+require('../../withSendbird.js');
+require('../../index-c52d3b49.js');
 require('../../ui/Input.js');
 require('../../ui/TextButton.js');
-require('../../color-f63289fc.js');
-require('../../actionTypes-3093b492.js');
+require('../../color-0a9815e7.js');
+require('../../actionTypes-eb892166.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var DELIVERY_RECIPT = 'delivery_receipt';
+var DELIVERY_RECIPT = "delivery_receipt";
 
 var ChannelListUI = function (props) {
   var _a, _b;
@@ -110,10 +99,7 @@ var ChannelListUI = function (props) {
         setShowProfileEdit(true);
       }
     },
-    allowProfileEdit: allowProfileEdit,
-    renderIconButton: function () {
-      return /*#__PURE__*/React__default["default"].createElement(ChannelList_components_AddChannel.AddChannel, null);
-    }
+    allowProfileEdit: allowProfileEdit
   })), showProfileEdit && /*#__PURE__*/React__default["default"].createElement(EditUserProfile, {
     onThemeChange: onThemeChange,
     onCancel: function () {
@@ -129,7 +115,7 @@ var ChannelListUI = function (props) {
       var fetchMore = target.clientHeight + target.scrollTop === target.scrollHeight;
 
       if (fetchMore && (channelSource === null || channelSource === void 0 ? void 0 : channelSource.hasNext)) {
-        logger.info('ChannelList: Fetching more channels');
+        logger.info("ChannelList: Fetching more channels");
         channelListDispatcher({
           type: ChannelList_context.FETCH_CHANNELS_START,
           payload: null
@@ -137,7 +123,7 @@ var ChannelListUI = function (props) {
         channelSource.next().then(function (channelList) {
           var _a, _b;
 
-          logger.info('ChannelList: Fetching channels successful', channelList);
+          logger.info("ChannelList: Fetching channels successful", channelList);
           channelListDispatcher({
             type: ChannelList_context.FETCH_CHANNELS_SUCCESS,
             payload: channelList
@@ -147,7 +133,7 @@ var ChannelListUI = function (props) {
           });
 
           if (canSetMarkAsDelivered) {
-            logger.info('ChannelList: Marking all channels as read'); // eslint-disable-next-line no-unused-expressions
+            logger.info("ChannelList: Marking all channels as read"); // eslint-disable-next-line no-unused-expressions
 
             channelList === null || channelList === void 0 ? void 0 : channelList.forEach(function (c, idx) {
               // Plan-based rate limits - minimum limit is 5 requests per second
@@ -157,7 +143,7 @@ var ChannelListUI = function (props) {
             });
           }
         }).catch(function (err) {
-          logger.info('ChannelList: Fetching channels failed', err);
+          logger.info("ChannelList: Fetching channels failed", err);
           channelListDispatcher({
             type: ChannelList_context.FETCH_CHANNELS_FAILURE,
             payload: err
@@ -165,15 +151,15 @@ var ChannelListUI = function (props) {
         });
       }
     }
-  }, sdkError && (renderPlaceHolderError && typeof renderPlaceHolderError === 'function' ? renderPlaceHolderError === null || renderPlaceHolderError === void 0 ? void 0 : renderPlaceHolderError() : /*#__PURE__*/React__default["default"].createElement(ui_PlaceHolder.PlaceHolder, {
+  }, sdkError && (renderPlaceHolderError && typeof renderPlaceHolderError === "function" ? renderPlaceHolderError === null || renderPlaceHolderError === void 0 ? void 0 : renderPlaceHolderError() : /*#__PURE__*/React__default["default"].createElement(ui_PlaceHolder.PlaceHolder, {
     type: ui_PlaceHolder.PlaceHolderTypes.WRONG
   })), /*#__PURE__*/React__default["default"].createElement("div", null, allChannels && allChannels.map(function (channel, idx) {
     var onLeaveChannel = function (c, cb) {
-      logger.info('ChannelList: Leaving channel', c);
+      logger.info("ChannelList: Leaving channel", c);
       c.leave().then(function (res) {
-        logger.info('ChannelList: Leaving channel success', res);
+        logger.info("ChannelList: Leaving channel success", res);
 
-        if (cb && typeof cb === 'function') {
+        if (cb && typeof cb === "function") {
           cb(res, null);
         }
 
@@ -182,9 +168,9 @@ var ChannelListUI = function (props) {
           payload: channel === null || channel === void 0 ? void 0 : channel.url
         });
       }).catch(function (err) {
-        logger.error('ChannelList: Leaving channel failed', err);
+        logger.error("ChannelList: Leaving channel failed", err);
 
-        if (cb && typeof cb === 'function') {
+        if (cb && typeof cb === "function") {
           cb(null, err);
         }
       });
@@ -195,7 +181,7 @@ var ChannelListUI = function (props) {
         return;
       }
 
-      logger.info('ChannelList: Clicked on channel:', channel);
+      logger.info("ChannelList: Clicked on channel:", channel);
       channelListDispatcher({
         type: ChannelList_context.SET_CURRENT_CHANNEL,
         payload: channel
@@ -230,9 +216,9 @@ var ChannelListUI = function (props) {
         });
       }
     });
-  })), (!sdkIntialized || loading) && (renderPlaceHolderLoading && typeof renderPlaceHolderLoading === 'function' ? renderPlaceHolderLoading === null || renderPlaceHolderLoading === void 0 ? void 0 : renderPlaceHolderLoading() : /*#__PURE__*/React__default["default"].createElement(ui_PlaceHolder.PlaceHolder, {
+  })), (!sdkIntialized || loading) && (renderPlaceHolderLoading && typeof renderPlaceHolderLoading === "function" ? renderPlaceHolderLoading === null || renderPlaceHolderLoading === void 0 ? void 0 : renderPlaceHolderLoading() : /*#__PURE__*/React__default["default"].createElement(ui_PlaceHolder.PlaceHolder, {
     type: ui_PlaceHolder.PlaceHolderTypes.LOADING
-  })), (!allChannels || allChannels.length === 0) && (renderPlaceHolderEmptyList && typeof renderPlaceHolderEmptyList === 'function' ? renderPlaceHolderEmptyList === null || renderPlaceHolderEmptyList === void 0 ? void 0 : renderPlaceHolderEmptyList() : /*#__PURE__*/React__default["default"].createElement(ui_PlaceHolder.PlaceHolder, {
+  })), (!allChannels || allChannels.length === 0) && (renderPlaceHolderEmptyList && typeof renderPlaceHolderEmptyList === "function" ? renderPlaceHolderEmptyList === null || renderPlaceHolderEmptyList === void 0 ? void 0 : renderPlaceHolderEmptyList() : /*#__PURE__*/React__default["default"].createElement(ui_PlaceHolder.PlaceHolder, {
     type: ui_PlaceHolder.PlaceHolderTypes.NO_CHANNELS
   }))));
 };

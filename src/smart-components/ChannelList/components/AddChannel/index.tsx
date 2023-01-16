@@ -1,12 +1,12 @@
-import './add-channel.scss';
+import "./add-channel.scss";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import IconButton from '../../../../ui/IconButton';
-import Icon, { IconTypes, IconColors } from '../../../../ui/Icon';
+import IconButton from "../../../../ui/IconButton";
+import Icon, { IconTypes, IconColors } from "../../../../ui/Icon";
 
-import CreateChannel from '../../../CreateChannel';
-import useSendbirdStateContext from '../../../../hooks/useSendbirdStateContext';
+import CreateChannel from "../../../CreateChannel";
+import useSendbirdStateContext from "../../../../hooks/useSendbirdStateContext";
 
 export const AddChannel: React.VoidFunctionComponent = () => {
   const [showModal, setShowModal] = useState(false);
@@ -31,20 +31,18 @@ export const AddChannel: React.VoidFunctionComponent = () => {
           height="24px"
         />
       </IconButton>
-      {
-        showModal && (
-          <CreateChannel
-            onCancel={() => {
-              setShowModal(false);
-            }}
-            onCreateChannel={() => {
-              setShowModal(false);
-            }}
-          />
-        )
-      }
+      {showModal && (
+        <CreateChannel
+          onCancel={() => {
+            setShowModal(false);
+          }}
+          onCreateChannel={() => {
+            setShowModal(false);
+          }}
+        />
+      )}
     </>
   );
-}
+};
 
 export default AddChannel;

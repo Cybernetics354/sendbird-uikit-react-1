@@ -1,27 +1,31 @@
-import './channel-list-ui.scss';
+import "./channel-list-ui.scss";
 
-import React, { useState } from 'react';
-import type { GroupChannel, Member, SendbirdGroupChat } from '@sendbird/chat/groupChannel';
-import type { User } from '@sendbird/chat';
+import React, { useState } from "react";
+import type {
+  GroupChannel,
+  Member,
+  SendbirdGroupChat,
+} from "@sendbird/chat/groupChannel";
+import type { User } from "@sendbird/chat";
 
-import ChannelListHeader from '../ChannelListHeader';
-import AddChannel from '../AddChannel';
-import ChannelPreview from '../ChannelPreview';
-import ChannelPreviewAction from '../ChannelPreviewAction';
-import { useChannelListContext } from '../../context/ChannelListProvider';
-import * as channelListActions from '../../dux/actionTypes';
+import ChannelListHeader from "../ChannelListHeader";
+import AddChannel from "../AddChannel";
+import ChannelPreview from "../ChannelPreview";
+import ChannelPreviewAction from "../ChannelPreviewAction";
+import { useChannelListContext } from "../../context/ChannelListProvider";
+import * as channelListActions from "../../dux/actionTypes";
 
-import useSendbirdStateContext from '../../../../hooks/useSendbirdStateContext';
-import EditUserProfile from '../../../EditUserProfile';
-import PlaceHolder, { PlaceHolderTypes } from '../../../../ui/PlaceHolder';
+import useSendbirdStateContext from "../../../../hooks/useSendbirdStateContext";
+import EditUserProfile from "../../../EditUserProfile";
+import PlaceHolder, { PlaceHolderTypes } from "../../../../ui/PlaceHolder";
 
-const DELIVERY_RECIPT = 'delivery_receipt';
+const DELIVERY_RECIPT = "delivery_receipt";
 
 interface RenderChannelPreviewProps {
   channel: GroupChannel;
   onLeaveChannel(
     channel: GroupChannel,
-    onLeaveChannelCb?: (c: GroupChannel) => void,
+    onLeaveChannelCb?: (c: GroupChannel) => void
   );
 }
 
@@ -40,7 +44,9 @@ export interface ChannelListUIProps {
   renderPlaceHolderEmptyList?: (props: void) => React.ReactNode;
 }
 
-const ChannelListUI: React.FC<ChannelListUIProps> = (props: ChannelListUIProps) => {
+const ChannelListUI: React.FC<ChannelListUIProps> = (
+  props: ChannelListUIProps
+) => {
   const {
     renderHeader,
     renderChannelPreview,
@@ -85,71 +91,78 @@ const ChannelListUI: React.FC<ChannelListUIProps> = (props: ChannelListUIProps) 
             }
           }}
           allowProfileEdit={allowProfileEdit}
-          renderIconButton={() => (
-            <AddChannel />
-          )}
+          // renderIconButton={() => (
+          //   <AddChannel />
+          // )}
         />
       </div>
-      {
-        showProfileEdit && (
-          <EditUserProfile
-            onThemeChange={onThemeChange}
-            onCancel={() => { setShowProfileEdit(false); }}
-            onEditProfile={() => {
-              setShowProfileEdit(false);
-            }}
-          />
-        )
-      }
+      {showProfileEdit && (
+        <EditUserProfile
+          onThemeChange={onThemeChange}
+          onCancel={() => {
+            setShowProfileEdit(false);
+          }}
+          onEditProfile={() => {
+            setShowProfileEdit(false);
+          }}
+        />
+      )}
       <div
         className="sendbird-channel-list__body"
         onScroll={(e) => {
           const target = e?.target as HTMLDivElement;
-          const fetchMore = target.clientHeight + target.scrollTop === target.scrollHeight;
+          const fetchMore =
+            target.clientHeight + target.scrollTop === target.scrollHeight;
           if (fetchMore && channelSource?.hasNext) {
-            logger.info('ChannelList: Fetching more channels');
+            logger.info("ChannelList: Fetching more channels");
             channelListDispatcher({
               type: channelListActions.FETCH_CHANNELS_START,
               payload: null,
             });
-            channelSource.next().then((channelList) => {
-              logger.info('ChannelList: Fetching channels successful', channelList);
-              channelListDispatcher({
-                type: channelListActions.FETCH_CHANNELS_SUCCESS,
-                payload: channelList,
-              });
-              const canSetMarkAsDelivered = sdk?.appInfo?.premiumFeatureList
-                ?.find((feature) => (feature === DELIVERY_RECIPT));
-
-              if (canSetMarkAsDelivered) {
-                logger.info('ChannelList: Marking all channels as read');
-                // eslint-disable-next-line no-unused-expressions
-                channelList?.forEach((c, idx) => {
-                  // Plan-based rate limits - minimum limit is 5 requests per second
-                  setTimeout(() => {
-                    c?.markAsDelivered();
-                  }, 300 * idx);
+            channelSource
+              .next()
+              .then((channelList) => {
+                logger.info(
+                  "ChannelList: Fetching channels successful",
+                  channelList
+                );
+                channelListDispatcher({
+                  type: channelListActions.FETCH_CHANNELS_SUCCESS,
+                  payload: channelList,
                 });
-              }
-            }).catch((err) => {
-              logger.info('ChannelList: Fetching channels failed', err);
-              channelListDispatcher({
-                type: channelListActions.FETCH_CHANNELS_FAILURE,
-                payload: err,
+                const canSetMarkAsDelivered =
+                  sdk?.appInfo?.premiumFeatureList?.find(
+                    (feature) => feature === DELIVERY_RECIPT
+                  );
+
+                if (canSetMarkAsDelivered) {
+                  logger.info("ChannelList: Marking all channels as read");
+                  // eslint-disable-next-line no-unused-expressions
+                  channelList?.forEach((c, idx) => {
+                    // Plan-based rate limits - minimum limit is 5 requests per second
+                    setTimeout(() => {
+                      c?.markAsDelivered();
+                    }, 300 * idx);
+                  });
+                }
+              })
+              .catch((err) => {
+                logger.info("ChannelList: Fetching channels failed", err);
+                channelListDispatcher({
+                  type: channelListActions.FETCH_CHANNELS_FAILURE,
+                  payload: err,
+                });
               });
-            });
           }
         }}
       >
-        {
-          (sdkError) && (
-            (renderPlaceHolderError && typeof renderPlaceHolderError === 'function') ? (
-              renderPlaceHolderError?.()
-            ): (
-              <PlaceHolder type={PlaceHolderTypes.WRONG} />
-            )
-          )
-        }
+        {sdkError &&
+          (renderPlaceHolderError &&
+          typeof renderPlaceHolderError === "function" ? (
+            renderPlaceHolderError?.()
+          ) : (
+            <PlaceHolder type={PlaceHolderTypes.WRONG} />
+          ))}
         {/*
           To do: Implement windowing
           Implement windowing if you are dealing with large number of messages/channels
@@ -158,14 +171,14 @@ const ChannelListUI: React.FC<ChannelListUIProps> = (props: ChannelListUIProps) 
           we are planning to implement it inside the library
         */}
         <div>
-          {
-            allChannels && allChannels.map((channel, idx) => {
+          {allChannels &&
+            allChannels.map((channel, idx) => {
               const onLeaveChannel = (c, cb) => {
-                logger.info('ChannelList: Leaving channel', c);
+                logger.info("ChannelList: Leaving channel", c);
                 c.leave()
                   .then((res) => {
-                    logger.info('ChannelList: Leaving channel success', res);
-                    if (cb && typeof cb === 'function') {
+                    logger.info("ChannelList: Leaving channel success", res);
+                    if (cb && typeof cb === "function") {
                       cb(res, null);
                     }
                     channelListDispatcher({
@@ -174,71 +187,66 @@ const ChannelListUI: React.FC<ChannelListUIProps> = (props: ChannelListUIProps) 
                     });
                   })
                   .catch((err) => {
-                    logger.error('ChannelList: Leaving channel failed', err);
-                    if (cb && typeof cb === 'function') {
+                    logger.error("ChannelList: Leaving channel failed", err);
+                    if (cb && typeof cb === "function") {
                       cb(null, err);
                     }
                   });
               };
 
               const onClick = () => {
-                if (!isOnline) { return; }
-                logger.info('ChannelList: Clicked on channel:', channel);
+                if (!isOnline) {
+                  return;
+                }
+                logger.info("ChannelList: Clicked on channel:", channel);
                 channelListDispatcher({
                   type: channelListActions.SET_CURRENT_CHANNEL,
                   payload: channel,
                 });
               };
 
-              return (
-                (renderChannelPreview)
-                  ? (
-                    // eslint-disable-next-line
-                    <div key={channel?.url} onClick={onClick}>
-                      {renderChannelPreview({ channel, onLeaveChannel })}
-                    </div>
-                  )
-                  : (
-                    <ChannelPreview
-                      key={channel?.url}
-                      tabIndex={idx}
-                      onClick={onClick}
-                      channel={channel}
-                      isActive={channel?.url === currentChannel?.url}
-                      isTyping={typingChannels?.some(({ url }) => url === channel?.url)}
-                      renderChannelAction={(() => (
-                        <ChannelPreviewAction
-                          disabled={!isOnline}
-                          onLeaveChannel={() => onLeaveChannel(channel, null)}
-                        />
-                      ))}
+              return renderChannelPreview ? (
+                // eslint-disable-next-line
+                <div key={channel?.url} onClick={onClick}>
+                  {renderChannelPreview({ channel, onLeaveChannel })}
+                </div>
+              ) : (
+                <ChannelPreview
+                  key={channel?.url}
+                  tabIndex={idx}
+                  onClick={onClick}
+                  channel={channel}
+                  isActive={channel?.url === currentChannel?.url}
+                  isTyping={typingChannels?.some(
+                    ({ url }) => url === channel?.url
+                  )}
+                  renderChannelAction={() => (
+                    <ChannelPreviewAction
+                      disabled={!isOnline}
+                      onLeaveChannel={() => onLeaveChannel(channel, null)}
                     />
-                  )
+                  )}
+                />
               );
-            })
-          }
+            })}
         </div>
-        {
-          (!sdkIntialized || loading) && (
-            (renderPlaceHolderLoading && typeof renderPlaceHolderLoading === 'function') ? (
-              renderPlaceHolderLoading?.()
-            ): (
-              <PlaceHolder type={PlaceHolderTypes.LOADING} />
-            )
-          )
-        }
-        {
-          (!allChannels || allChannels.length === 0) && (
-            (renderPlaceHolderEmptyList && typeof renderPlaceHolderEmptyList === 'function') ? (
-              renderPlaceHolderEmptyList?.()
-            ): (
-              <PlaceHolder type={PlaceHolderTypes.NO_CHANNELS} />
-            )
-          )
-        }
+        {(!sdkIntialized || loading) &&
+          (renderPlaceHolderLoading &&
+          typeof renderPlaceHolderLoading === "function" ? (
+            renderPlaceHolderLoading?.()
+          ) : (
+            <PlaceHolder type={PlaceHolderTypes.LOADING} />
+          ))}
+        {(!allChannels || allChannels.length === 0) &&
+          (renderPlaceHolderEmptyList &&
+          typeof renderPlaceHolderEmptyList === "function" ? (
+            renderPlaceHolderEmptyList?.()
+          ) : (
+            <PlaceHolder type={PlaceHolderTypes.NO_CHANNELS} />
+          ))}
       </div>
     </>
   );
-}
+};
 
 export default ChannelListUI;

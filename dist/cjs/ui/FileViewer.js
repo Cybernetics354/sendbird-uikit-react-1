@@ -6,14 +6,14 @@ var React = require('react');
 var PropTypes = require('prop-types');
 var reactDom = require('react-dom');
 var ui_Avatar = require('./Avatar.js');
-var ui_Label = require('../index-c05adf2d.js');
+var ui_Label = require('../index-06ad9a23.js');
 var ui_Icon = require('./Icon.js');
-var index = require('../index-ef9f3a3e.js');
-var index$1 = require('../index-bcaa279b.js');
-require('../tslib.es6-137d7ef9.js');
+var index = require('../index-2ebbabef.js');
+var index$1 = require('../index-8f34af30.js');
+require('../tslib.es6-43d4c54c.js');
 require('./ImageRenderer.js');
-require('../uuid-0e49bd14.js');
-require('../stringSet-827d08e2.js');
+require('../uuid-3cedbe50.js');
+require('../stringSet-c0b7ef0b.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
