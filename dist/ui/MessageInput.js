@@ -1,18 +1,18 @@
-import { _ as _objectSpread2 } from '../_rollupPluginBabelHelpers-5522a8f6.js';
+import { _ as _objectSpread2 } from '../_rollupPluginBabelHelpers-848c5853.js';
 import React__default, { useContext, useRef, useState, useMemo, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { N as NodeTypes, M as MessageInputKeys, a as NodeNames } from '../const-f5c14b82.js';
-import { U as USER_MENTION_TEMP_CHAR } from '../const-1cfee98a.js';
+import { N as NodeTypes, M as MessageInputKeys, a as NodeNames } from '../const-3640e36f.js';
+import { U as USER_MENTION_TEMP_CHAR } from '../const-38038f0e.js';
 import IconButton from './IconButton.js';
-import { B as Button, a as ButtonTypes, b as ButtonSizes } from '../index-1187996f.js';
+import { B as Button, a as ButtonTypes, b as ButtonSizes } from '../index-9a801843.js';
 import MentionUserLabel from './MentionUserLabel.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-96f2ca18.js';
-import { a as LocalizationContext } from '../LocalizationContext-bdb56d81.js';
-import { u as convertWordToStringObj, S as StringObjType, v as arrayEqual, g as getClassName } from '../index-f2c869d7.js';
-import '../stringSet-1cad1dbf.js';
-import '../index-8d5e2563.js';
-import '../tslib.es6-6b1ce61a.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-19cce0bb.js';
+import { a as LocalizationContext } from '../LocalizationContext-f2486c30.js';
+import { u as convertWordToStringObj, S as StringObjType, v as arrayEqual, g as getClassName } from '../index-42611471.js';
+import '../stringSet-5c50e96e.js';
+import '../index-bfc04e6e.js';
+import '../tslib.es6-19dec4e0.js';
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 

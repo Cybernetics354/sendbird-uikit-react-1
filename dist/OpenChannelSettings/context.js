@@ -1,8 +1,8 @@
 import React__default, { useState, useEffect } from 'react';
 import useSendbirdStateContext from '../useSendbirdStateContext.js';
-import { a as UserProfileProvider } from '../UserProfileContext-7c91714e.js';
+import { a as UserProfileProvider } from '../UserProfileContext-8fcecbac.js';
 import '../withSendbird.js';
-import '../_rollupPluginBabelHelpers-5522a8f6.js';
+import '../_rollupPluginBabelHelpers-848c5853.js';
 import 'prop-types';
 
 var OpenChannelSettingsContext = /*#__PURE__*/React__default.createContext(undefined);

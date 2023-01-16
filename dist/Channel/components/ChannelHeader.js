@@ -1,29 +1,29 @@
 import React__default, { useContext } from 'react';
-import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../../index-96f2ca18.js';
+import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../../index-19cce0bb.js';
 import Icon, { IconTypes, IconColors } from '../../ui/Icon.js';
 import IconButton from '../../ui/IconButton.js';
 import ChannelAvatar from '../../ui/ChannelAvatar.js';
-import { a as LocalizationContext } from '../../LocalizationContext-bdb56d81.js';
+import { a as LocalizationContext } from '../../LocalizationContext-f2486c30.js';
 import useSendbirdStateContext from '../../useSendbirdStateContext.js';
-import { u as useChannelContext } from '../../ChannelProvider-4400f751.js';
+import { u as useChannelContext } from '../../ChannelProvider-fa939f5a.js';
 import 'prop-types';
-import '../../stringSet-1cad1dbf.js';
-import '../../_rollupPluginBabelHelpers-5522a8f6.js';
+import '../../stringSet-5c50e96e.js';
+import '../../_rollupPluginBabelHelpers-848c5853.js';
 import '../../ui/Avatar.js';
-import '../../tslib.es6-6b1ce61a.js';
+import '../../tslib.es6-19dec4e0.js';
 import '../../ui/ImageRenderer.js';
-import '../../uuid-21b2a5db.js';
-import '../../utils-ce7905db.js';
-import '../../index-8d5e2563.js';
+import '../../uuid-30725b60.js';
+import '../../utils-e026572a.js';
+import '../../index-bfc04e6e.js';
 import '../../withSendbird.js';
-import '../../UserProfileContext-7c91714e.js';
-import '../../index-6e7e7eaa.js';
-import '../../topics-e87f2985.js';
-import '../../index-f2c869d7.js';
-import '../../compareIds-14392765.js';
-import '../../const-1cfee98a.js';
-import '../../groupChannel-bddb1f44.js';
-import '../../__bundle-ba710a09-e080d3fa.js';
+import '../../UserProfileContext-8fcecbac.js';
+import '../../index-a08d70ad.js';
+import '../../topics-351221d8.js';
+import '../../index-42611471.js';
+import '../../compareIds-3145b5b2.js';
+import '../../const-38038f0e.js';
+import '../../groupChannel-64990697.js';
+import '../../__bundle-ba710a09-9d691cce.js';
 import '../../ui/ContextMenu.js';
 import 'react-dom';
 import '../../ui/SortByRow.js';
@@ -36,11 +36,10 @@ var getChannelTitle = function (channel, currentUserId, stringSet) {
 
   if (!(channel === null || channel === void 0 ? void 0 : channel.name) && !(channel === null || channel === void 0 ? void 0 : channel.members)) {
     return LABEL_STRING_SET.NO_TITLE;
-  }
+  } // if (channel?.name && channel.name !== 'Group Channel') {
+  //   return channel.name;
+  // }
 
-  if ((channel === null || channel === void 0 ? void 0 : channel.name) && channel.name !== 'Group Channel') {
-    return channel.name;
-  }
 
   if (((_a = channel === null || channel === void 0 ? void 0 : channel.members) === null || _a === void 0 ? void 0 : _a.length) === 1) {
     return LABEL_STRING_SET.NO_MEMBERS;
@@ -52,7 +51,7 @@ var getChannelTitle = function (channel, currentUserId, stringSet) {
   }).map(function (_a) {
     var nickname = _a.nickname;
     return nickname || LABEL_STRING_SET.NO_NAME;
-  }).join(', ');
+  }).join(", ");
 };
 
 var ChatHeader = function () {

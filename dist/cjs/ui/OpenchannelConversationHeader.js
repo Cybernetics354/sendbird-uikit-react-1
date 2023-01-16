@@ -4,15 +4,15 @@ var React = require('react');
 var ui_Avatar = require('./Avatar.js');
 var ui_Icon = require('./Icon.js');
 var ui_IconButton = require('./IconButton.js');
-var ui_Label = require('../index-1ac2a868.js');
-var LocalizationContext = require('../LocalizationContext-4edc1945.js');
-require('../tslib.es6-c3158c01.js');
+var ui_Label = require('../index-c05adf2d.js');
+var LocalizationContext = require('../LocalizationContext-92b5f010.js');
+require('../tslib.es6-137d7ef9.js');
 require('./ImageRenderer.js');
 require('prop-types');
-require('../uuid-11d3ef5e.js');
-require('../_rollupPluginBabelHelpers-652929ec.js');
-require('../stringSet-8a123999.js');
-require('../index-1968df45.js');
+require('../uuid-0e49bd14.js');
+require('../_rollupPluginBabelHelpers-0825dba8.js');
+require('../stringSet-827d08e2.js');
+require('../index-5dca71f9.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

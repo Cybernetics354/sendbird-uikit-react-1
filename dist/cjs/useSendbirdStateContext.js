@@ -2,7 +2,7 @@
 
 var React = require('react');
 var withSendbird = require('./withSendbird.js');
-require('./_rollupPluginBabelHelpers-652929ec.js');
+require('./_rollupPluginBabelHelpers-0825dba8.js');
 
 /**
  * Example:

@@ -1,31 +1,31 @@
 'use strict';
 
 var React = require('react');
-var ui_Label = require('../../index-1ac2a868.js');
+var ui_Label = require('../../index-c05adf2d.js');
 var ui_Icon = require('../../ui/Icon.js');
 var ui_IconButton = require('../../ui/IconButton.js');
 var ui_ChannelAvatar = require('../../ui/ChannelAvatar.js');
-var LocalizationContext = require('../../LocalizationContext-4edc1945.js');
+var LocalizationContext = require('../../LocalizationContext-92b5f010.js');
 var useSendbirdStateContext = require('../../useSendbirdStateContext.js');
-var Channel_context = require('../../ChannelProvider-8470d3ae.js');
+var Channel_context = require('../../ChannelProvider-7b1bce6b.js');
 require('prop-types');
-require('../../stringSet-8a123999.js');
-require('../../_rollupPluginBabelHelpers-652929ec.js');
+require('../../stringSet-827d08e2.js');
+require('../../_rollupPluginBabelHelpers-0825dba8.js');
 require('../../ui/Avatar.js');
-require('../../tslib.es6-c3158c01.js');
+require('../../tslib.es6-137d7ef9.js');
 require('../../ui/ImageRenderer.js');
-require('../../uuid-11d3ef5e.js');
-require('../../utils-48aa919f.js');
-require('../../index-1968df45.js');
+require('../../uuid-0e49bd14.js');
+require('../../utils-b11dec2c.js');
+require('../../index-5dca71f9.js');
 require('../../withSendbird.js');
-require('../../UserProfileContext-80f2ddb9.js');
-require('../../index-52d3e5e9.js');
-require('../../topics-1218aada.js');
-require('../../index-8daa2cfb.js');
-require('../../compareIds-99bee171.js');
-require('../../const-e7009964.js');
-require('../../groupChannel-4c8b1fc9.js');
-require('../../__bundle-ba710a09-8573aa4e.js');
+require('../../UserProfileContext-f85dab3b.js');
+require('../../index-6a589d8a.js');
+require('../../topics-74cfc1f1.js');
+require('../../index-bcaa279b.js');
+require('../../compareIds-e1644f6f.js');
+require('../../const-1f118907.js');
+require('../../groupChannel-7bc8e546.js');
+require('../../__bundle-ba710a09-d8fef857.js');
 require('../../ui/ContextMenu.js');
 require('react-dom');
 require('../../ui/SortByRow.js');
@@ -42,11 +42,10 @@ var getChannelTitle = function (channel, currentUserId, stringSet) {
 
   if (!(channel === null || channel === void 0 ? void 0 : channel.name) && !(channel === null || channel === void 0 ? void 0 : channel.members)) {
     return LABEL_STRING_SET.NO_TITLE;
-  }
+  } // if (channel?.name && channel.name !== 'Group Channel') {
+  //   return channel.name;
+  // }
 
-  if ((channel === null || channel === void 0 ? void 0 : channel.name) && channel.name !== 'Group Channel') {
-    return channel.name;
-  }
 
   if (((_a = channel === null || channel === void 0 ? void 0 : channel.members) === null || _a === void 0 ? void 0 : _a.length) === 1) {
     return LABEL_STRING_SET.NO_MEMBERS;
@@ -58,7 +57,7 @@ var getChannelTitle = function (channel, currentUserId, stringSet) {
   }).map(function (_a) {
     var nickname = _a.nickname;
     return nickname || LABEL_STRING_SET.NO_NAME;
-  }).join(', ');
+  }).join(", ");
 };
 
 var ChatHeader = function () {

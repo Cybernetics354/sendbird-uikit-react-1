@@ -1,18 +1,18 @@
 import React__default, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../index-96f2ca18.js';
-import { a as LocalizationContext } from '../LocalizationContext-bdb56d81.js';
+import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../index-19cce0bb.js';
+import { a as LocalizationContext } from '../LocalizationContext-f2486c30.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
 import IconButton from './IconButton.js';
 import ChannelAvatar from './ChannelAvatar.js';
-import '../stringSet-1cad1dbf.js';
-import '../index-8d5e2563.js';
-import '../_rollupPluginBabelHelpers-5522a8f6.js';
+import '../stringSet-5c50e96e.js';
+import '../index-bfc04e6e.js';
+import '../_rollupPluginBabelHelpers-848c5853.js';
 import './Avatar.js';
-import '../tslib.es6-6b1ce61a.js';
+import '../tslib.es6-19dec4e0.js';
 import './ImageRenderer.js';
-import '../uuid-21b2a5db.js';
-import '../utils-ce7905db.js';
+import '../uuid-30725b60.js';
+import '../utils-e026572a.js';
 
 const getChannelTitle = function () {
   var _channel$members;
@@ -23,11 +23,10 @@ const getChannelTitle = function () {
 
   if (!(channel !== null && channel !== void 0 && channel.name) && !(channel !== null && channel !== void 0 && channel.members)) {
     return stringSet.NO_TITLE;
-  }
+  } // if (channel?.name && channel.name !== 'Group Channel') {
+  //   return channel.name;
+  // }
 
-  if (channel !== null && channel !== void 0 && channel.name && channel.name !== 'Group Channel') {
-    return channel.name;
-  }
 
   if ((channel === null || channel === void 0 ? void 0 : (_channel$members = channel.members) === null || _channel$members === void 0 ? void 0 : _channel$members.length) === 1) {
     return stringSet.NO_MEMBERS;

@@ -1,7 +1,7 @@
 import React__default from 'react';
 import PropTypes from 'prop-types';
-import { a as LabelTypography, b as LabelColors, d as changeColorToClassName, L as Label } from '../index-96f2ca18.js';
-import '../stringSet-1cad1dbf.js';
+import { a as LabelTypography, b as LabelColors, d as changeColorToClassName, L as Label } from '../index-19cce0bb.js';
+import '../stringSet-5c50e96e.js';
 
 const http = /https?:\/\//;
 function LinkLabel(_ref) {

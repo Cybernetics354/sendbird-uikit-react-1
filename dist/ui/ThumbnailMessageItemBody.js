@@ -1,9 +1,9 @@
 import React__default, { useState } from 'react';
 import Icon, { IconTypes, IconColors } from './Icon.js';
 import ImageRenderer from './ImageRenderer.js';
-import { g as getClassName, a as isSentMessage, A as isVideoMessage, z as isGifMessage } from '../index-f2c869d7.js';
+import { g as getClassName, a as isSentMessage, A as isVideoMessage, z as isGifMessage } from '../index-42611471.js';
 import 'prop-types';
-import '../tslib.es6-6b1ce61a.js';
+import '../tslib.es6-19dec4e0.js';
 
 function ThumbnailMessageItemBody(_a) {
   var _b, _c;

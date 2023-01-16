@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import ChannelAvatar from './ChannelAvatar.js';
 import Badge from './Badge.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../index-96f2ca18.js';
-import { u as useLocalization } from '../LocalizationContext-bdb56d81.js';
-import { i as isToday, a as isYesterday, f as formatRelative } from '../index-c75c3d33.js';
-import { f as format } from '../index-6e7e7eaa.js';
-import { t as truncateString } from '../index-f2c869d7.js';
+import { c as LabelStringSet, L as Label, a as LabelTypography, b as LabelColors } from '../index-19cce0bb.js';
+import { u as useLocalization } from '../LocalizationContext-f2486c30.js';
+import { i as isToday, a as isYesterday, f as formatRelative } from '../index-0f2c5759.js';
+import { f as format } from '../index-a08d70ad.js';
+import { t as truncateString } from '../index-42611471.js';
 import './Avatar.js';
-import '../tslib.es6-6b1ce61a.js';
+import '../tslib.es6-19dec4e0.js';
 import './ImageRenderer.js';
-import '../uuid-21b2a5db.js';
-import '../utils-ce7905db.js';
-import '../stringSet-1cad1dbf.js';
-import '../index-8d5e2563.js';
-import '../index-7183b40a.js';
+import '../uuid-30725b60.js';
+import '../utils-e026572a.js';
+import '../stringSet-5c50e96e.js';
+import '../index-bfc04e6e.js';
+import '../index-c36a782e.js';
 
 const getChannelTitle = function () {
   var _channel$members;
@@ -26,11 +26,10 @@ const getChannelTitle = function () {
 
   if (!(channel !== null && channel !== void 0 && channel.name) && !(channel !== null && channel !== void 0 && channel.members)) {
     return stringSet.NO_TITLE;
-  }
+  } // if (channel?.name && channel.name !== 'Group Channel') {
+  //   return channel.name;
+  // }
 
-  if (channel !== null && channel !== void 0 && channel.name && channel.name !== 'Group Channel') {
-    return channel.name;
-  }
 
   if ((channel === null || channel === void 0 ? void 0 : (_channel$members = channel.members) === null || _channel$members === void 0 ? void 0 : _channel$members.length) === 1) {
     return stringSet.NO_MEMBERS;

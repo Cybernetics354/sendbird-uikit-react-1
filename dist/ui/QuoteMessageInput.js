@@ -1,13 +1,13 @@
 import React__default, { useContext } from 'react';
-import { w as isFileMessage, x as isImageMessage, d as isThumbnailMessage, y as isAudioMessage, g as getClassName, z as isGifMessage, A as isVideoMessage, B as isUserMessage } from '../index-f2c869d7.js';
+import { w as isFileMessage, x as isImageMessage, d as isThumbnailMessage, y as isAudioMessage, g as getClassName, z as isGifMessage, A as isVideoMessage, B as isUserMessage } from '../index-42611471.js';
 import Icon, { IconTypes, IconColors } from './Icon.js';
-import { L as Label, a as LabelTypography, b as LabelColors } from '../index-96f2ca18.js';
-import { a as LocalizationContext } from '../LocalizationContext-bdb56d81.js';
+import { L as Label, a as LabelTypography, b as LabelColors } from '../index-19cce0bb.js';
+import { a as LocalizationContext } from '../LocalizationContext-f2486c30.js';
 import ImageRenderer from './ImageRenderer.js';
-import '../tslib.es6-6b1ce61a.js';
+import '../tslib.es6-19dec4e0.js';
 import 'prop-types';
-import '../stringSet-1cad1dbf.js';
-import '../index-8d5e2563.js';
+import '../stringSet-5c50e96e.js';
+import '../index-bfc04e6e.js';
 
 var componentClassname = 'sendbird-quote_message_input__avatar';
 function QuoteMessageThumbnail(_a) {

@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var useSendbirdStateContext = require('../useSendbirdStateContext.js');
-var UserProfileContext = require('../UserProfileContext-80f2ddb9.js');
-var uuid = require('../uuid-11d3ef5e.js');
+var UserProfileContext = require('../UserProfileContext-f85dab3b.js');
+var uuid = require('../uuid-0e49bd14.js');
 require('../withSendbird.js');
-require('../_rollupPluginBabelHelpers-652929ec.js');
+require('../_rollupPluginBabelHelpers-0825dba8.js');
 require('prop-types');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
